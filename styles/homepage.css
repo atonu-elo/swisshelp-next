@@ -957,6 +957,7 @@
     @media (max-width: 980px) {
       .trust-bar {
         padding: 8px 0;
+        margin: 22px 0;
       }
 
       .trust-bar-inner {
