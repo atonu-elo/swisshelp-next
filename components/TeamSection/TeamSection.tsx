@@ -34,7 +34,7 @@ const TEAM_MEMBERS = [
   {
     name: 'Dennis Trachsel',
     role: 'Service & Montage',
-    image: '/images/_AMA8126.jpg',
+    image: '/images/dennis-trachsel.webp',
     qual: 'Zweiter Sohn von Christoph Trachsel. Unterstützt Service- und Montageeinsätze im Familienbetrieb und ist fester Teil des Swisshelp-Teams.',
   },
 ]
