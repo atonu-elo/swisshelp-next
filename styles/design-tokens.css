@@ -1,0 +1,49 @@
+/*
+  styles/design-tokens.css
+  ─────────────────────────────────────────────────────────────────────────────
+  Shared CSS custom properties for all NEW pages (/dienstleistungen, /kontakt,
+  /ueber-uns, /impressum, /datenschutz, …).
+
+  ⚠ This file is NOT imported by the homepage. The homepage injects its own
+  complete CSS (styles/homepage.css) as a route-scoped <style> tag through
+  HomepageStyles.tsx. These tokens live in a separate :root scope that only
+  applies when this file is imported into a CSS Module.
+
+  Usage in any CSS Module:
+    @import '@/styles/design-tokens.css';
+*/
+
+:root {
+  /* ── Brand colours ─────────────────────────────────────── */
+  --swh-accent:        #E11D2A;
+  --swh-accent-dark:   #B91522;
+  --swh-ink:           #0E0E10;
+  --swh-ink-soft:      #5A5A66;
+  --swh-ink-muted:     #8A8A96;
+  --swh-white:         #FFFFFF;
+  --swh-bg-dark:       #141416;
+  --swh-bg-darker:     #0A0A0C;
+  --swh-bg-light:      #F6F5F3;
+  --swh-line:          rgba(14,14,16,0.10);
+
+  /* ── Typography ────────────────────────────────────────── */
+  --swh-font-display:  'Darker Grotesque', system-ui, sans-serif;
+  --swh-font-mono:     'IBM Plex Mono', ui-monospace, monospace;
+  --swh-font-body:     'IBM Plex Sans', system-ui, sans-serif;
+  --swh-text-size:     16px;
+  --swh-text-line:     1.65;
+  --swh-btn-font:      var(--swh-font-mono);
+  --swh-btn-size:      13px;
+  --swh-btn-weight:    600;
+  --swh-btn-spacing:   0.08em;
+
+  /* ── Spacing ────────────────────────────────────────────  */
+  --swh-nav-h:         68px;           /* fixed nav height to offset page-top */
+  --swh-wide:          1440px;
+  --swh-pad:           clamp(20px, 4vw, 56px);
+  --swh-section-py:    clamp(64px, 8vw, 112px);
+
+  /* ── Radius / border ───────────────────────────────────── */
+  --swh-radius:        2px;
+  --swh-radius-md:     6px;
+}

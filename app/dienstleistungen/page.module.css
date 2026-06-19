@@ -1,0 +1,187 @@
+/* Dienstleistungen page — CSS Module */
+/* Design tokens: accent #E11D2A, bg-light #F4F2EE, ink #0E0E10 */
+
+.main {
+  padding-top: 80px; /* nav height */
+  min-height: 100vh;
+  background: #F4F2EE;
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 56px);
+}
+
+.header {
+  padding: 80px 0 48px;
+  max-width: 720px;
+}
+
+.eyebrow {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #E11D2A;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 2px;
+  background: #E11D2A;
+  display: inline-block;
+}
+
+.h1 {
+  font-family: 'Darker Grotesque', system-ui, sans-serif;
+  font-size: clamp(24px, 2.9vw, 38px);
+  font-weight: 850;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  color: #0E0E10;
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+
+.lead {
+  font-size: 18px;
+  color: #555555;
+  line-height: 1.55;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding-bottom: 80px;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #D5D2CC;
+}
+
+.cardImg {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.cardImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .cardImg img {
+  transform: scale(1.03);
+}
+
+.cardBody {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.chip {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #E11D2A;
+}
+
+.cardTitle {
+  font-family: 'Darker Grotesque', system-ui, sans-serif;
+  font-size: clamp(20px, 1.8vw, 24px);
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  color: #0E0E10;
+  line-height: 1.1;
+}
+
+.cardDesc {
+  font-size: 15px;
+  color: #555555;
+  line-height: 1.55;
+  flex: 1;
+}
+
+.cardLink {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #E11D2A;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  margin-top: auto;
+  position: relative;
+  transition: color 0.22s, gap 0.22s, padding-left 0.22s;
+}
+
+.cardLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1.5px;
+  width: 0;
+  background: #E11D2A;
+  transition: width 0.3s cubic-bezier(.6, 0, .2, 1);
+}
+
+.cardLink:hover {
+  color: #E11D2A;
+  gap: 14px;
+}
+
+.cardLink:hover::after {
+  width: 100%;
+}
+
+.arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 7px solid currentColor;
+  transition: transform 0.22s steps(4);
+}
+
+.cardLink:hover .arrow {
+  transform: translateX(4px);
+}

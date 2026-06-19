@@ -1,0 +1,30 @@
+/* PageWrapper.module.css */
+
+.main {
+  --nav-h: 68px;
+  --font-display: 'Darker Grotesque', system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --bg-light: #F6F5F3;
+  --ink: #0E0E10;
+
+  display: block;
+  padding-top: var(--nav-h);
+  min-height: calc(100dvh - var(--nav-h));
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--bg-light);
+
+  /* Reset any inherited browser margin */
+  margin: 0;
+}
+
+.main :where(p, li, dd) {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.main :where(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-display);
+}

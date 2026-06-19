@@ -1,0 +1,91 @@
+/* SiteNav.module.css — Styles for the shared SiteNav component used on new pages. */
+/* Design tokens mirror the homepage CI (accent red, dark bg, IBM Plex Mono). */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #0E0E10;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navInner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 14px clamp(20px, 4vw, 56px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.navLogo {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+  text-decoration: none;
+}
+
+.navLogo:hover img {
+  transform: scale(1.1);
+}
+
+.navLogo img {
+  height: 78px;
+  width: auto;
+  display: block;
+  transition: transform 0.15s ease;
+}
+
+.navLinks {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.navLinks a {
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  opacity: 0.85;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.navLinks a:hover {
+  opacity: 1;
+}
+
+.navPhone {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #E11D2A;
+  color: #ffffff;
+  padding: 12px 18px;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.navPhone:hover {
+  opacity: 0.9;
+}
+
+.navPhone svg {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 900px) {
+  .navLinks {
+    display: none;
+  }
+}

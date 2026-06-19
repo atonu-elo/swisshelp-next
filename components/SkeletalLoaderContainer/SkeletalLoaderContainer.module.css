@@ -1,0 +1,27 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.skeletonContainer {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.35s ease-out;
+}
+
+.contentContainer {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.45s ease-in;
+}
+
+/* Once hydration/loading completes, swap layouts */
+.wrapper.loaded .skeletonContainer {
+  display: none;
+  opacity: 0;
+}
+
+.wrapper.loaded .contentContainer {
+  display: block;
+  opacity: 1;
+}

@@ -1,0 +1,224 @@
+/* ueber-uns/page.module.css — CSS Module */
+
+.main {
+  padding-top: 68px; /* matching swh-nav-h */
+  min-height: 100vh;
+  background: #F6F5F3;
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 56px);
+  padding-bottom: 80px;
+}
+
+.eyebrow {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #E11D2A;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 2px;
+  background: #E11D2A;
+  display: inline-block;
+}
+
+.h2 {
+  font-family: 'Darker Grotesque', system-ui, sans-serif;
+  font-size: clamp(22px, 2.4vw, 32px);
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  color: #0E0E10;
+  margin-bottom: 12px;
+  margin-top: 12px;
+}
+
+/* ── Full Width Hero Section ─────────────────────────────── */
+.heroSection {
+  position: relative;
+  width: 100%;
+  padding: clamp(100px, 12vw, 160px) 0;
+  background: #0E0E10;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(7, 7, 9, 0.85) 0%, rgba(7, 7, 9, 0.55) 50%, rgba(7, 7, 9, 0.85) 100%);
+  z-index: 1;
+}
+
+.heroContentContainer {
+  position: relative;
+  z-index: 2;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 56px);
+}
+
+.heroContent {
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.heroContent .eyebrow {
+  color: #E11D2A;
+  margin-bottom: 24px;
+}
+
+.heroContent .eyebrow::before {
+  background: #E11D2A;
+}
+
+.heroContent .h1 {
+  font-family: 'Darker Grotesque', system-ui, sans-serif;
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: 850;
+  line-height: 1.05;
+  color: #ffffff;
+  margin: 0 0 24px;
+  letter-spacing: -0.02em;
+}
+
+.heroContent .h2 {
+  color: #ffffff;
+  margin-top: 34px;
+  margin-bottom: 10px;
+}
+
+.heroContent .lead {
+  margin: 0 0 12px;
+}
+
+.heroContent .lead:last-child {
+  margin-bottom: 0;
+}
+
+.heroContent .lead {
+  font-size: clamp(17px, 1.25vw, 14px);
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.55;
+}
+
+/* ── Team Section ────────────────────────────────────────── */
+.teamSection {
+  margin: 80px 0 48px;
+}
+
+.teamHeader {
+  margin-bottom: 40px;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1300px) {
+  .teamGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .teamGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  .teamGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.teamCard {
+  background: #0E0E10;
+  color: #ffffff;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.teamCardImg {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: #141416;
+}
+
+.teamCardImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 25%;
+}
+
+.teamCardBody {
+  padding: 28px 24px 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.teamCardName {
+  font-family: 'Darker Grotesque', system-ui, sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: #ffffff;
+  margin-bottom: 6px;
+  min-height: calc(1.15em * 1);
+}
+
+.teamCardRole {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.06em;
+  color: #E11D2A;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  min-height: calc(1.4em * 2);
+}
+
+.teamCardQual {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.55;
+  flex: 1;
+  margin: 0;
+}

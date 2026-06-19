@@ -1,0 +1,6190 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elektriker Zürich &amp; Limmattal | Swisshelp Elektro</title>
+  <meta name="description"
+    content="Massgeschneiderte Gesamtkonzepte für moderne Elektrotechnik. Elektroinstallationen, Service und Reparatur, Smart Home mit KNX und LOXONE, Ladestationen und periodische Kontrollen. Familienbetrieb aus Weiningen ZH für Zürich, Limmattal und Aargau.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://swisshelp.info/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_CH">
+  <meta property="og:url" content="https://swisshelp.info/">
+  <meta property="og:title" content="Elektriker Zürich &amp; Limmattal | Swisshelp Elektro">
+  <meta property="og:description"
+    content="Massgeschneiderte Gesamtkonzepte für moderne Elektrotechnik. Elektroinstallationen, Service, Smart Home, Ladestationen und periodische Kontrollen. Familienbetrieb aus Weiningen ZH.">
+  <meta property="og:image" content="https://swisshelp.info/og-image.jpg">
+  <meta property="og:site_name" content="Swisshelp Elektro">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Elektriker Zürich &amp; Limmattal | Swisshelp Elektro">
+  <meta name="twitter:description"
+    content="Massgeschneiderte Gesamtkonzepte für moderne Elektrotechnik. Familienbetrieb aus Weiningen ZH.">
+  <meta name="twitter:image" content="https://swisshelp.info/og-image.jpg">
+
+  <!-- v37: Hero-Bild vorladen (LCP) -->
+  <link rel="preload" as="image" href="./reference/_AMA7416.jpg" type="image/webp">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@500;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* ============== TOKENS ============== */
+    :root {
+      --bg-light: #F4F2EE;
+      --bg-dark: #0E0E10;
+      --bg-darker: #070709;
+      --ink: #0E0E10;
+      --ink-soft: #555555;
+      --accent: #E11D2A;
+      --accent-dark: #A0151F;
+      --accent-glow: rgba(225, 29, 42, 0.18);
+      --line: #D5D2CC;
+      --white: #FFFFFF;
+
+      --display: 'Darker Grotesque', system-ui, sans-serif;
+      --body: 'IBM Plex Sans', system-ui, sans-serif;
+      --mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+      --max: 1280px;
+      --wide: 1440px;
+      --pad: clamp(20px, 4vw, 56px);
+
+      /* =========== TYPO-TOKENS, eine Groesse pro Ebene, ueber ALLE Sections.
+     Keine section-spezifischen font-size-Overrides auf h1/h2/h3/h4/.eyebrow.
+     Regel: ~/.claude/skills/webdesigner-pro/rules/typo-tokens.md (2026-04-23) */
+      --fs-hero-h1: clamp(42px, 5.2vw, 76px);
+      /* Hero-Only, separater Token */
+      --fs-h1: clamp(38px, 4.6vw, 60px);
+      --fs-h2: clamp(34px, 4.2vw, 56px);
+      --fs-h3: clamp(22px, 2vw, 28px);
+      --fs-h4: clamp(17px, 1.4vw, 20px);
+      --fs-eyebrow: 12px;
+      --fs-lead: 18px;
+      --fs-body: 16px;
+      --fs-meta: 13px;
+      --fs-footer-label: 12px;
+      /* dokumentierte Ausnahme fuer Footer-Col-Headings */
+
+      /* =========== SWISSHELP INDIE-CI, PIXEL BUTTON SYSTEM ===========
+     2-Reihen Pixel-Sweep, horizontal groesser als vertikal (User-Feedback 2026-04-23).
+     Gilt fuer ALLE Buttons auf allen Seiten (Header, Hero, CTAs, Cards, Footer). */
+      --swh-btn-steps: 7;
+      /* weniger Steps = groessere Pixel */
+      --swh-btn-duration: 0.62s;
+      --swh-btn-half: calc(var(--swh-btn-duration) / var(--swh-btn-steps) / 2);
+      --swh-btn-radius: 2px;
+      --swh-btn-padding-y: 18px;
+      --swh-btn-padding-x: 28px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--body);
+      background: var(--bg-light);
+      color: var(--ink);
+      line-height: 1.55;
+      font-size: 17px;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* ============== SWISS-GRID-HAIRLINES (v16 B-Struktur) ==============
+   12-Spalten Hairline-Layer, sehr subtil, nur ahnbar.
+   Max 1440px zentriert, fixed im Viewport, non-interactive. */
+    .swiss-grid {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .swiss-grid-inner {
+      width: 100%;
+      max-width: var(--wide);
+      height: 100%;
+      padding: 0 var(--pad);
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    .swiss-grid-inner>span {
+      border-left: 0.5px solid rgba(213, 210, 204, 0.28);
+      height: 100%;
+    }
+
+    .swiss-grid-inner>span:last-child {
+      border-right: 0.5px solid rgba(213, 210, 204, 0.28);
+    }
+
+    /* Auf dunklen Sections unsichtbarer */
+    @media (max-width: 720px) {
+      .swiss-grid {
+        display: none;
+      }
+    }
+
+    /* Alle Content-Sections liegen ueber der Grid-Layer */
+    .hero,
+    .chronik,
+    .services,
+    .diag-break,
+    .ablauf,
+    .knx,
+    .wallbox,
+    .about,
+    .about-us,
+    .team,
+    .faq,
+    .big-cta,
+    .nav,
+    .footer,
+    .footer-partners {
+      position: relative;
+      z-index: 1;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+    }
+
+    .wide {
+      max-width: var(--wide);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: var(--display);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      font-weight: 900;
+      color: var(--ink);
+    }
+
+    h1 {
+      font-size: var(--fs-h1);
+      line-height: 1.04;
+    }
+
+    h2 {
+      font-size: var(--fs-h2);
+      font-weight: 800;
+      line-height: 1.04;
+      letter-spacing: -0.02em;
+    }
+
+    h3 {
+      font-size: var(--fs-h3);
+      font-weight: 800;
+      letter-spacing: -0.015em;
+    }
+
+    h4 {
+      font-size: var(--fs-h4);
+      font-weight: 800;
+    }
+
+    p {
+      font-size: var(--fs-body);
+      color: var(--ink-soft);
+    }
+
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: var(--fs-eyebrow);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    /* ============== NAV ============== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg-dark);
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-inner {
+      max-width: var(--wide);
+      margin: 0 auto;
+      padding: 14px var(--pad);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .nav-logo {
+      display: inline-flex;
+      align-items: center;
+      line-height: 0;
+      transition: opacity .2s;
+    }
+
+    .nav-logo:hover {
+      opacity: 0.85;
+    }
+
+    .nav-logo img {
+      height: 32px;
+      width: auto;
+      display: block;
+    }
+
+
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--white);
+      opacity: 0.85;
+      transition: opacity .2s;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    .nav-phone {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent);
+      color: var(--white);
+      padding: 12px 18px;
+      font-family: var(--mono);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      border-radius: 2px;
+      transition: color .22s;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    /* Pixel-Sweep, fuellt mit WEISS (Fix v16: auf schwarzem Header-BG war schwarz-fill unsichtbar) */
+    .nav-phone::before,
+    .nav-phone::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      transform: translateX(-101%);
+      transition: transform var(--swh-btn-duration) steps(var(--swh-btn-steps));
+      z-index: -1;
+      pointer-events: none;
+      background: var(--white);
+    }
+
+    .nav-phone::before {
+      top: 0;
+    }
+
+    .nav-phone::after {
+      bottom: 0;
+      transition-delay: var(--swh-btn-half);
+    }
+
+    .nav-phone:hover::before,
+    .nav-phone:hover::after {
+      transform: translateX(0);
+    }
+
+    .nav-phone:hover {
+      color: var(--accent);
+    }
+
+    .nav-phone svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* ============== HAMBURGER (Mobile Nav) ============== */
+    .nav-burger {
+      display: none;
+      width: 44px;
+      height: 44px;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 2px;
+      cursor: pointer;
+      position: relative;
+      padding: 0;
+      margin-left: 12px;
+    }
+
+    .nav-burger span {
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      height: 2px;
+      background: var(--white);
+      transition: transform .28s, opacity .2s, top .28s;
+    }
+
+    .nav-burger span:nth-child(1) {
+      top: 14px;
+    }
+
+    .nav-burger span:nth-child(2) {
+      top: 21px;
+    }
+
+    .nav-burger span:nth-child(3) {
+      top: 28px;
+    }
+
+    .nav-burger[aria-expanded="true"] span:nth-child(1) {
+      top: 21px;
+      transform: rotate(45deg);
+    }
+
+    .nav-burger[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-burger[aria-expanded="true"] span:nth-child(3) {
+      top: 21px;
+      transform: rotate(-45deg);
+    }
+
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      inset: 72px 0 0 0;
+      background: var(--bg-darker);
+      z-index: 99;
+      padding: 40px var(--pad);
+      flex-direction: column;
+      gap: 6px;
+      overflow-y: auto;
+    }
+
+    .nav-mobile.open {
+      display: flex;
+    }
+
+    .nav-mobile a {
+      color: var(--white);
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: 32px;
+      letter-spacing: -0.02em;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      text-decoration: none;
+    }
+
+    .nav-mobile a:last-of-type {
+      border-bottom: none;
+    }
+
+    .nav-mobile .nav-mobile-call {
+      margin-top: 28px;
+      background: var(--accent);
+      color: var(--white);
+      font-family: var(--mono);
+      font-size: 16px;
+      font-weight: 600;
+      padding: 18px 20px;
+      border-bottom: none;
+      text-align: center;
+      letter-spacing: 0.02em;
+      border-radius: 2px;
+    }
+
+    /* ============== HERO ============== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      max-height: 900px;
+      background: var(--bg-light);
+      color: var(--ink);
+      display: flex;
+      flex-direction: column;
+      padding-top: 72px;
+      overflow: hidden;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        max-height: 820px;
+      }
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: var(--bg-darker);
+      overflow: hidden;
+    }
+
+    /* v33 Layer-Strategie für Fullbleed-Schutz auf Ultrawide-Displays:
+   1) Backdrop-Layer (blurred extended) füllt 100% — fängt jedes Aspect-Ratio ab
+   2) Main-Image bleibt zentriert mit max-width — Christoph-Kopf bleibt mit sauberem Headroom sichtbar */
+    .hero-bg-extend {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: blur(48px) brightness(0.55) saturate(1.05);
+      transform: scale(1.18);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hero-bg img.hero-bg-main {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      max-width: 2800px;
+      object-fit: cover;
+      object-position: center top;
+      z-index: 1;
+    }
+
+    /* Mobile: Christoph sitzt im Bild rechts der Mitte — bei schmaler Container den rechten Bild-Bereich zeigen damit Kopf+Logo sichtbar bleiben */
+    @media (max-width: 900px) {
+      .hero-bg img.hero-bg-main {
+        object-position: center top;
+      }
+
+      .hero-bg>img:not(.hero-bg-extend):not(.hero-bg-main) {
+        object-position: center top;
+      }
+    }
+
+    /* Fallback für Browser ohne mehrfache img-Layer (alte v32-Selektor weiterhin gültig) */
+    .hero-bg>img:not(.hero-bg-extend):not(.hero-bg-main) {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      /* v23: Gradient links ab 10% noch voll opak, dann Ausblenden */
+      background: linear-gradient(90deg,
+          rgba(18, 18, 22, 0.86) 0%,
+          rgba(18, 18, 22, 0.86) 10%,
+          rgba(18, 18, 22, 0.74) 26%,
+          rgba(18, 18, 22, 0.42) 44%,
+          rgba(18, 18, 22, 0.10) 55%,
+          rgba(18, 18, 22, 0.00) 64%);
+      z-index: 1;
+    }
+
+    .hero-stage {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+
+    .hero-inner {
+      max-width: var(--wide);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      width: 100%;
+      text-align: left;
+    }
+
+    .hero-inner>.hero-eyebrow {
+      max-width: none;
+    }
+
+    .hero-inner>h1 {
+      max-width: 640px;
+    }
+
+    .hero-inner>.hero-sub {
+      max-width: 540px;
+    }
+
+    .hero-inner>.hero-ctas {
+      max-width: none;
+    }
+
+    .hero-inner .hero-eyebrow {
+      justify-content: flex-start;
+    }
+
+    .hero-inner .hero-ctas {
+      justify-content: flex-start;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .hero-eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .hero h1 {
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: var(--fs-hero-h1);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      max-width: 640px;
+      margin: 0 0 20px 0;
+    }
+
+    .hero-sub {
+      max-width: 540px;
+      margin-left: 0;
+      margin-right: 0;
+      color: var(--white);
+      opacity: 0.82;
+      font-size: clamp(16px, 1.1vw, 18px);
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    /* Leistungs-Chips im Hero */
+    .hero-services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      list-style: none;
+      padding: 0;
+      margin: 24px 0 28px;
+    }
+
+    .hero-services li {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: rgba(255, 255, 255, 0.92);
+      padding: 8px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.04);
+      transition: all 160ms;
+    }
+
+    .hero-services li:hover {
+      border-color: var(--accent);
+      background: rgba(225, 29, 42, 0.12);
+    }
+
+    /* Trust-Mini-Row */
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 28px;
+    }
+
+    .hero-trust span {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero-trust span::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    /* v19d: Hero-Text weiss auf Dark-Overlay */
+    .hero-sub {
+      font-size: clamp(17px, 1.25vw, 20px);
+      color: var(--white);
+      opacity: 0.82;
+      line-height: 1.5;
+      max-width: 540px;
+      margin-bottom: 36px;
+    }
+
+    .hero-eyebrow {
+      color: var(--accent);
+    }
+
+    .hero-eyebrow::before {
+      background: var(--accent);
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    /* =========== SWISSHELP BUTTON-FAMILIE (Indie-CI, ueberschreibt alle Buttons) ===========
+   Pixel-Sweep 2 Reihen, oben/unten alternierend von links nach rechts.
+   ::before fuellt die OBERE Haelfte, ::after die UNTERE Haelfte um HALBEN Step versetzt.
+   Ergebnis pro Pixel-Spalte: erst oben dann unten. Same-Same ueber alle Buttons.
+*/
+    .btn-primary,
+    .btn-secondary,
+    .btn-outline-dark,
+    .btn-outline-light,
+    .knx-partner,
+    .diag-break-call {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .btn-primary::before,
+    .btn-primary::after,
+    .btn-secondary::before,
+    .btn-secondary::after,
+    .btn-outline-dark::before,
+    .btn-outline-dark::after,
+    .btn-outline-light::before,
+    .btn-outline-light::after,
+    .knx-partner::before,
+    .knx-partner::after,
+    .diag-break-call::before,
+    .diag-break-call::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      transform: translateX(-101%);
+      transition: transform var(--swh-btn-duration) steps(var(--swh-btn-steps));
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .btn-primary::before,
+    .btn-secondary::before,
+    .btn-outline-dark::before,
+    .btn-outline-light::before,
+    .knx-partner::before,
+    .diag-break-call::before {
+      top: 0;
+    }
+
+    .btn-primary::after,
+    .btn-secondary::after,
+    .btn-outline-dark::after,
+    .btn-outline-light::after,
+    .knx-partner::after,
+    .diag-break-call::after {
+      bottom: 0;
+      transition-delay: var(--swh-btn-half);
+    }
+
+    .btn-primary:hover::before,
+    .btn-primary:hover::after,
+    .btn-secondary:hover::before,
+    .btn-secondary:hover::after,
+    .btn-outline-dark:hover::before,
+    .btn-outline-dark:hover::after,
+    .btn-outline-light:hover::before,
+    .btn-outline-light:hover::after,
+    .knx-partner:hover::before,
+    .knx-partner:hover::after,
+    .diag-break-call:hover::before,
+    .diag-break-call:hover::after {
+      transform: translateX(0);
+    }
+
+    /* Primary, rot, fuellt mit schwarz */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--accent);
+      color: var(--white);
+      padding: var(--swh-btn-padding-y) var(--swh-btn-padding-x);
+      font-family: var(--mono);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      border-radius: var(--swh-btn-radius);
+      border: none;
+      cursor: pointer;
+      transition: color .22s;
+    }
+
+    .btn-primary::before,
+    .btn-primary::after {
+      background: var(--ink);
+    }
+
+    .diag-break-call::before,
+    .diag-break-call::after {
+      background: var(--white);
+    }
+
+    .diag-break-call:hover {
+      color: var(--accent);
+    }
+
+    .diag-break-call:hover strong {
+      color: var(--accent);
+    }
+
+    .btn-primary:hover {
+      color: var(--white);
+    }
+
+    .btn-primary .btn-text {
+      display: inline-block;
+      transition: transform .2s cubic-bezier(.6, 0, .2, 1);
+    }
+
+    .btn-primary:hover .btn-text {
+      transform: translateX(-2px);
+    }
+
+    .btn-primary .btn-arrow {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-left: 8px solid currentColor;
+      transition: transform .22s steps(4);
+      margin-left: 4px;
+    }
+
+    .btn-primary:hover .btn-arrow {
+      transform: translateX(4px);
+    }
+
+    .btn-primary svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* Secondary, outline auf DUNKLEM Grund, fuellt mit rot */
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--white);
+      padding: var(--swh-btn-padding-y) var(--swh-btn-padding-x);
+      font-family: var(--mono);
+      font-size: 15px;
+      font-weight: 500;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: var(--swh-btn-radius);
+      background: transparent;
+      transition: border-color .2s, color .22s;
+    }
+
+    .btn-secondary::before,
+    .btn-secondary::after {
+      background: var(--accent);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--white);
+    }
+
+    /* Outline auf HELLEM Grund (Hero mit weissem Overlay), fuellt mit rot */
+    /* v20a: auf dunklem Hero-Overlay → weisser Text + heller Rand */
+    .btn-outline-light {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--white);
+      padding: var(--swh-btn-padding-y) var(--swh-btn-padding-x);
+      font-family: var(--mono);
+      font-size: 15px;
+      font-weight: 500;
+      border: 1px solid rgba(255, 255, 255, 0.70);
+      border-radius: var(--swh-btn-radius);
+      background: transparent;
+      transition: color .22s, border-color .2s;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-outline-light::before,
+    .btn-outline-light::after {
+      background: var(--accent);
+    }
+
+    .btn-outline-light:hover {
+      color: var(--white);
+      border-color: var(--accent);
+    }
+
+    /* Outline auf DUNKLEM Grund (alias), fuellt mit rot */
+    .btn-outline-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--white);
+      padding: var(--swh-btn-padding-y) var(--swh-btn-padding-x);
+      font-family: var(--mono);
+      font-size: 15px;
+      font-weight: 500;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: var(--swh-btn-radius);
+      background: transparent;
+      transition: color .22s, border-color .2s;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-outline-dark::before,
+    .btn-outline-dark::after {
+      background: var(--accent);
+    }
+
+    .btn-outline-dark:hover {
+      border-color: var(--accent);
+    }
+
+    /* ============== HERO RIBBON (statisch, ersetzt Trust-Bar v16) ============== */
+    /* ============== ROTE TRUST-LEISTE AM HERO-ENDE (v18: ersetzt Ribbon) ============== */
+    .trust-bar {
+      position: relative;
+      background: var(--accent);
+      color: var(--white);
+      padding: 18px 0;
+      margin: 0;
+      z-index: 3;
+    }
+
+    .trust-bar-inner {
+      max-width: var(--wide);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px 28px;
+    }
+
+    .trust-bar .trust-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--mono);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .trust-bar .trust-item svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      stroke: rgba(255, 255, 255, 0.95);
+    }
+
+    .trust-bar .trust-sep {
+      width: 1px;
+      height: 18px;
+      background: rgba(255, 255, 255, 0.38);
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 980px) {
+      .trust-bar {
+        padding: 14px 0;
+      }
+
+      .trust-bar-inner {
+        justify-content: flex-start;
+        gap: 12px 22px;
+      }
+
+      .trust-bar .trust-sep {
+        display: none;
+      }
+
+      .trust-bar .trust-item {
+        font-size: 11.5px;
+        letter-spacing: 0.1em;
+        gap: 10px;
+      }
+
+      .trust-bar .trust-item svg {
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+    /* ============== MEGA STATS (v19a: H2 LINKS neben Stats, nicht darüber) ============== */
+    .mega-stats {
+      background: var(--bg-light);
+      padding: clamp(56px, 6vw, 84px) 0 clamp(48px, 5vw, 72px);
+      position: relative;
+    }
+
+    .mega-stats-inner {
+      max-width: var(--wide);
+      margin: 0 auto;
+      padding: clamp(16px, 2vw, 24px) var(--pad) clamp(28px, 3vw, 44px);
+      display: grid;
+      grid-template-columns: minmax(300px, 1.4fr) 3fr;
+      gap: clamp(28px, 4vw, 64px);
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .mega-stats-head {
+      padding: 0;
+      text-align: left;
+      max-width: 560px;
+    }
+
+    .mega-stats-head .eyebrow {
+      margin-bottom: 18px;
+      justify-content: flex-start;
+    }
+
+    .mega-stats-head h2 {
+      line-height: 1.02;
+      text-align: left;
+      margin: 0;
+      font-size: clamp(32px, 3.4vw, 52px);
+      letter-spacing: -0.02em;
+      font-weight: 900;
+    }
+
+    .mega-stats-grid-inner {
+      display: grid;
+      /* v27: minmax(0, 1fr) statt 1fr — sonst wächst min-content der Cell während Scramble
+     ("KNX+LX" → "166+81") und Grid verteilt um → border-left Linien wandern.
+     v31: 3. Cell (KNX+LX) bekommt mehr Breite, sonst schneidet der Strich rechts daneben
+     den Buchstaben "X". Verteilung 0.95 / 1 / 1.2 / 0.95 statt gleichmaessig. */
+      grid-template-columns:
+        minmax(0, 0.95fr) minmax(0, 1fr) minmax(0, 1.2fr) minmax(0, 0.95fr);
+      gap: 0;
+      background: transparent;
+    }
+
+    .mega-stat {
+      background: transparent;
+      padding: 4px 20px 4px 20px;
+      position: relative;
+      border-left: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .mega-stat:first-child {
+      border-left: none;
+      padding-left: 0;
+    }
+
+    .mega-stat-num {
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: clamp(38px, 4.4vw, 64px);
+      line-height: 0.9;
+      letter-spacing: -0.035em;
+      color: var(--ink);
+      margin-bottom: 6px;
+      min-height: 1.1em;
+      font-variant-numeric: tabular-nums;
+      font-feature-settings: "tnum" 1, "lnum" 1;
+      display: inline-block;
+      min-width: 3.2ch;
+      white-space: nowrap;
+    }
+
+    /* v31: 3. Mega-Stat (KNX+LX) Font etwas kleiner — mit nur 6 Buchstaben in
+   einem proportionalen Display-Cut wuerde der Text sonst aus der Cell laufen
+   und der "border-left" der NIV-Cell kreuzt durch das X. */
+    .mega-stat:nth-child(3) .mega-stat-num {
+      font-size: clamp(34px, 3.6vw, 52px);
+      letter-spacing: -0.04em;
+    }
+
+    /* v29: Mega-Stats children entspannter (0.85s/0.95s, Stagger Cap +160ms) */
+    .mega-stat>.mega-stat-num,
+    .mega-stat>.mega-stat-cap {
+      opacity: 0;
+      transform: translateY(34px);
+      transition: opacity .85s cubic-bezier(.19, 1, .22, 1), transform .95s cubic-bezier(.19, 1, .22, 1);
+      will-change: transform, opacity;
+    }
+
+    .mega-stat.is-in>.mega-stat-num,
+    .mega-stat.is-in>.mega-stat-cap {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .mega-stat.is-in>.mega-stat-cap {
+      transition-delay: 160ms;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .mega-stat>.mega-stat-num,
+      .mega-stat>.mega-stat-cap {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+
+    .mega-stat-num em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .mega-stat-icon {
+      display: none !important;
+    }
+
+    .mega-stat-cap {
+      font-family: var(--mono);
+      font-size: 11.5px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-mid);
+      line-height: 1.4;
+    }
+
+    @media (max-width: 980px) {
+      .mega-stats-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .mega-stats-grid-inner {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 36px;
+      }
+
+      .mega-stat {
+        border-left: none;
+        padding-left: 0;
+      }
+
+      .mega-stat:nth-child(2n) {
+        border-left: 1px solid var(--line);
+        padding-left: 20px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .mega-stats-grid-inner {
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: 44px;
+      }
+
+      .mega-stat:nth-child(2n) {
+        border-left: none;
+        padding-left: 0;
+      }
+
+      .mega-stat-cap {
+        font-size: 12px;
+      }
+    }
+
+    /* ============== SERVICES BENTO ============== */
+    .services {
+      background: var(--bg-light);
+      padding: clamp(40px, 4.5vw, 60px) 0 clamp(48px, 5vw, 72px);
+    }
+
+    .services-head {
+      max-width: var(--wide);
+      margin: 0 auto clamp(40px, 5vw, 72px);
+      padding: 0 var(--pad);
+    }
+
+    .services-head .eyebrow {
+      margin-bottom: 20px;
+    }
+
+    .services-head h2 {
+      max-width: 820px;
+      margin-bottom: 20px;
+    }
+
+    .services-head p {
+      max-width: 640px;
+      font-size: 18px;
+    }
+
+    .bento {
+      max-width: var(--wide);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .bento-card {
+      position: relative;
+      background: var(--bg-darker);
+      color: var(--white);
+      overflow: hidden;
+      display: flex;
+      padding: 0;
+      min-height: 340px;
+      transition: transform .3s ease;
+      isolation: isolate;
+    }
+
+    .bento-card:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Bento-Reveal v31g: Bulk-Reveal pro Section (User 2026-04-28).
+   Animation kommt zurueck — aber alle Cards einer Section erscheinen GLEICHZEITIG
+   sobald die Section sichtbar wird. Kein per-Card-Stagger mehr (war "abgehackt").
+   Trigger frueher per rootMargin damit kein "weisser Strich" beim Scrollen.
+   Sanftes opacity + translateY, kein horizontales translate3d. */
+    .bento-card {
+      opacity: 0;
+      transform: translateY(24px);
+      transition:
+        opacity .7s cubic-bezier(0.19, 1, 0.22, 1),
+        transform .7s cubic-bezier(0.19, 1, 0.22, 1);
+      will-change: opacity, transform;
+    }
+
+    .bento-card.is-in {
+      opacity: 1;
+      transform: translateY(0);
+      will-change: auto;
+    }
+
+    .bento-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .bento-card.is-in:hover {
+      transform: translateY(-3px);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .bento-card {
+        opacity: 1;
+        transform: none;
+        transition: transform .3s ease;
+      }
+    }
+
+    /* v16: Corner-Marks entfernt, Typo-Hierarchie + Whitespace statt Border-Tricks */
+
+    .bento-card-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .bento-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.78;
+      transition: opacity .4s, transform .7s cubic-bezier(.2, .8, .2, 1);
+    }
+
+    .bento-card:hover .bento-card-img img {
+      opacity: 0.88;
+      transform: scale(1.03);
+    }
+
+    /* Smart-Gradient: nur im UNTEREN Bereich, startet wo der Text beginnt */
+    .bento-card-grad {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 62%;
+      background: linear-gradient(to top,
+          rgba(7, 7, 9, 0.95) 0%,
+          rgba(7, 7, 9, 0.88) 30%,
+          rgba(7, 7, 9, 0.65) 62%,
+          rgba(7, 7, 9, 0.22) 88%,
+          rgba(7, 7, 9, 0) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .bento-card-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      width: 100%;
+      height: 100%;
+      padding: 28px 28px 24px;
+      gap: 12px;
+    }
+
+    .bento-card-body {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: flex-start;
+      text-align: left;
+      width: 100%;
+    }
+
+    .bento-card h3 {
+      color: var(--white);
+      font-weight: 800;
+      letter-spacing: -0.015em;
+      line-height: 1.08;
+      text-align: left;
+    }
+
+    .bento-card p {
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 15px;
+      line-height: 1.5;
+      max-width: 440px;
+      text-align: left;
+    }
+
+    /* Bento-Card-Link, erbt Pixel-Sweep aus der zentralen Button-Familie oben.
+   Nur visuelle Tokens hier (Groesse, Border, Padding). */
+    .bento-card-link {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-top: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      background: transparent;
+      text-decoration: none;
+      position: relative;
+      transition: color .22s, gap .22s, padding-left .22s;
+    }
+
+    .bento-card-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 1.5px;
+      width: 0;
+      background: var(--accent);
+      transition: width .3s cubic-bezier(.6, 0, .2, 1);
+    }
+
+    .bento-card-link:hover {
+      color: var(--accent);
+      gap: 14px;
+    }
+
+    .bento-card-link:hover::after {
+      width: 100%;
+    }
+
+    .bento-card-link .arrow {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 7px solid currentColor;
+      transition: transform .22s steps(4);
+    }
+
+    .bento-card-link:hover .arrow {
+      transform: translateX(4px);
+    }
+
+    /* Chip oben rechts */
+    .bento-card-chip {
+      position: absolute;
+      right: 16px;
+      top: 16px;
+      z-index: 3;
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      color: var(--white);
+      padding: 6px 10px;
+      background: rgba(225, 29, 42, 0.92);
+      text-transform: uppercase;
+      border-radius: 1px;
+    }
+
+    .bento-card-chip.ghost {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(6px);
+    }
+
+    /* Gleichmaessiges 2x4 Grid, 2 Spalten, 4 Reihen */
+    .bento-card {
+      grid-column: span 1;
+      min-height: 380px;
+    }
+
+    @media (max-width: 720px) {
+      .bento {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ============== DIAGONAL BREAK (v18: zurück zum v13-Style mit clip-path-Schräge + SVG-Logo 1:1) ============== */
+    .diag-break {
+      background: var(--accent);
+      color: var(--white);
+      padding: clamp(72px, 8vw, 110px) 0 clamp(92px, 10vw, 130px);
+      margin-top: 0;
+      margin-bottom: 0;
+      position: relative;
+      overflow: hidden;
+      clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+    }
+
+    .diag-break-inner {
+      max-width: var(--wide);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      text-align: left;
+      position: relative;
+      z-index: 2;
+    }
+
+    .diag-break-call {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-top: 36px;
+      color: var(--white);
+      font-family: var(--mono);
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+      padding-bottom: 10px;
+      transition: border-color .2s;
+    }
+
+    .diag-break-call:hover {
+      border-color: var(--white);
+    }
+
+    .diag-break-call strong {
+      font-family: var(--display);
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      text-transform: none;
+    }
+
+    .diag-break-call svg {
+      width: 16px;
+      height: 16px;
+      align-self: center;
+    }
+
+    /* v19d: Watermark weg — stattdessen 3 diagonale Linien als feiner Akzent rechts oben */
+    .diag-break-stat {
+      position: absolute;
+      right: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .diag-break-stat-num {
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: clamp(100px, 14vw, 220px);
+      line-height: 0.85;
+      letter-spacing: -0.06em;
+      color: rgba(255, 255, 255, 0.16);
+    }
+
+    .diag-break-stat-lbl {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.55);
+      padding-right: 8px;
+    }
+
+    @media (max-width: 900px) {
+      .diag-break-stat {
+        right: 5%;
+        top: auto;
+        bottom: 18%;
+        transform: none;
+      }
+
+      .diag-break-stat-num {
+        font-size: clamp(76px, 18vw, 120px);
+      }
+    }
+
+    .diag-break-eyebrow {
+      font-family: var(--mono);
+      font-size: var(--fs-eyebrow, 12px);
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.95);
+      margin-bottom: 22px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .diag-break-eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.85);
+      display: inline-block;
+    }
+
+    .diag-break h2 {
+      color: var(--white);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      max-width: 820px;
+    }
+
+    /* ============== ABLAUF ============== */
+    .ablauf {
+      background: var(--bg-light);
+      padding: clamp(52px, 6vw, 80px) 0 clamp(48px, 5vw, 72px);
+    }
+
+    .ablauf-head {
+      max-width: var(--wide);
+      margin: 0 auto clamp(28px, 3vw, 40px);
+      padding: 0 var(--pad);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: clamp(24px, 3vw, 48px);
+      align-items: end;
+    }
+
+    .ablauf-head-text {
+      min-width: 0;
+    }
+
+    .ablauf-head-text .eyebrow {
+      margin-bottom: 14px;
+    }
+
+    .ablauf-head h2 {
+      max-width: 780px;
+      margin-bottom: 14px;
+    }
+
+    .ablauf-head p {
+      max-width: 620px;
+      font-size: 17px;
+      color: var(--ink-soft);
+    }
+
+    /* Top-Controls rechts oben: Counter + Prev/Next-Pfeile (Raphael 2026-04-24) */
+    .ablauf-top-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+      padding-bottom: 6px;
+    }
+
+    .ablauf-top-nav .ablauf-counter {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      color: var(--ink-soft);
+      min-width: 60px;
+      text-align: right;
+    }
+
+    .ablauf-top-nav .ablauf-nav {
+      display: inline-flex !important;
+      gap: 8px;
+    }
+
+    .ablauf-top-nav .ablauf-nav-btn {
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(14, 14, 16, 0.22);
+      border-radius: 2px;
+      background: var(--white);
+      cursor: pointer;
+      color: var(--ink);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color .2s, background .2s, color .2s;
+    }
+
+    .ablauf-top-nav .ablauf-nav-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .ablauf-top-nav .ablauf-nav-btn svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Progress-Balken OBEN, full-width, zwischen Head und Slider */
+    .ablauf-progress-top {
+      max-width: var(--wide);
+      margin: 0 auto clamp(28px, 3vw, 40px);
+      padding: 0 var(--pad);
+      display: flex;
+      gap: 6px;
+      height: 3px;
+    }
+
+    .ablauf-progress-top .ablauf-progress-seg {
+      flex: 1;
+      background: rgba(14, 14, 16, 0.10);
+      position: relative;
+      overflow: hidden;
+      height: 3px;
+    }
+
+    .ablauf-progress-top .ablauf-progress-seg.is-done {
+      background: var(--ink);
+    }
+
+    .ablauf-progress-top .ablauf-progress-seg.is-active::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--accent);
+      transform-origin: left;
+      animation: ablaufBar var(--ablauf-interval, 5.5s) linear forwards;
+    }
+
+    @media (max-width: 760px) {
+      .ablauf-head {
+        grid-template-columns: 1fr;
+      }
+
+      .ablauf-top-nav {
+        align-self: flex-start;
+      }
+    }
+
+    /* Ablauf als Slide-Container: ein Schritt ist aktiv sichtbar, andere sind
+   links/rechts ausserhalb. Wechsel: alter nach links raus, neuer von rechts rein. */
+    .ablauf-steps {
+      max-width: var(--wide);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      position: relative;
+      overflow: hidden;
+      min-height: clamp(380px, 40vw, 480px);
+    }
+
+    .ablauf-step {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 0 var(--pad);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(28px, 4vw, 64px);
+      align-items: center;
+      opacity: 0;
+      transform: translateX(var(--ablauf-enter-from, 100%));
+      transition: transform .7s cubic-bezier(.65, .02, .15, 1), opacity .55s ease;
+      pointer-events: none;
+    }
+
+    .ablauf-step.is-active {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: auto;
+    }
+
+    .ablauf-step.is-leaving {
+      opacity: 0;
+      transform: translateX(var(--ablauf-exit-to, -100%));
+    }
+
+    .ablauf-step-img {
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: var(--bg-darker);
+      position: relative;
+    }
+
+    /* Grosser Step-Indicator oben links ueber dem Bild (Raphael 2026-04-23) */
+    .ablauf-step-badge {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      z-index: 2;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 10px;
+      padding: 10px 16px 10px 14px;
+      background: var(--accent);
+      color: var(--white);
+      font-family: var(--mono);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      border-radius: 2px;
+      box-shadow: 0 6px 18px rgba(225, 29, 42, 0.35);
+    }
+
+    .ablauf-step-badge .num {
+      font-family: var(--display);
+      font-size: clamp(32px, 3.6vw, 46px);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .ablauf-step-badge .label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .ablauf-step-text {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 0 clamp(8px, 2vw, 32px);
+    }
+
+    .ablauf-step-text h3 {
+      font-size: clamp(26px, 2.8vw, 40px);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .ablauf-step-text p {
+      font-size: clamp(16px, 1.2vw, 18px);
+      line-height: 1.6;
+      color: var(--ink-soft);
+      max-width: 480px;
+    }
+
+    /* Stepper-Controls */
+    .ablauf-controls {
+      max-width: var(--wide);
+      margin: 28px auto 0;
+      padding: 0 var(--pad);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .ablauf-progress {
+      flex: 1;
+      display: flex;
+      gap: 6px;
+      height: 2px;
+    }
+
+    .ablauf-progress-seg {
+      flex: 1;
+      background: rgba(14, 14, 16, 0.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ablauf-progress-seg.is-done {
+      background: var(--ink);
+    }
+
+    .ablauf-progress-seg.is-active::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--accent);
+      transform-origin: left;
+      animation: ablaufBar var(--ablauf-interval, 5s) linear forwards;
+    }
+
+    @keyframes ablaufBar {
+      from {
+        transform: scaleX(0);
+      }
+
+      to {
+        transform: scaleX(1);
+      }
+    }
+
+    /* Prev/Next-Buttons ausgeblendet, Auto-Play only (Raphael 2026-04-23) */
+    .ablauf-nav {
+      display: none;
+    }
+
+    .ablauf-nav-btn {
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(14, 14, 16, 0.22);
+      border-radius: var(--swh-btn-radius);
+      background: transparent;
+      cursor: pointer;
+      color: var(--ink);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color .2s, background .2s, color .2s;
+    }
+
+    .ablauf-nav-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .ablauf-nav-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .ablauf-counter {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--ink-soft);
+      min-width: 60px;
+      text-align: right;
+    }
+
+    @media (max-width: 760px) {
+      .ablauf-step {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      /* Mobile: Slider-Container hoeher, damit Body-Text der Karten nicht abschneidet */
+      .ablauf-steps {
+        min-height: clamp(640px, 150vw, 820px);
+      }
+
+      .ablauf-controls {
+        flex-wrap: wrap;
+      }
+    }
+
+    .ablauf-close {
+      max-width: 920px;
+      margin: 44px auto 0;
+      padding: 0 var(--pad);
+      text-align: center;
+      color: var(--ink-soft);
+      font-size: 20px;
+      line-height: 1.55;
+      letter-spacing: -0.005em;
+      font-weight: 400;
+    }
+
+    .ablauf-close strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .ablauf-close a {
+      color: var(--accent);
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 1px;
+      transition: opacity .2s;
+    }
+
+    .ablauf-close a:hover {
+      opacity: 0.7;
+    }
+
+    .ablauf-step-img {
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: var(--bg-darker);
+    }
+
+    .ablauf-step-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .ablauf-step-num {
+      display: none;
+      /* ersetzt durch .ablauf-step-badge im Bild */
+    }
+
+    .ablauf-step h3 {
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1.08;
+      margin-bottom: 6px;
+    }
+
+    .ablauf-step p {
+      font-size: 16px;
+      color: var(--ink-soft);
+      line-height: 1.55;
+    }
+
+    /* ============== KNX ============== */
+    .knx {
+      background: var(--bg-dark);
+      color: var(--white);
+      padding: clamp(56px, 6vw, 84px) 0;
+      position: relative;
+    }
+
+    .knx-inner {
+      max-width: var(--wide);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: clamp(32px, 4vw, 56px);
+      align-items: center;
+    }
+
+    .knx-text h2 {
+      color: var(--white);
+      margin-bottom: 20px;
+      max-width: 560px;
+    }
+
+    .knx-text p {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 17px;
+      max-width: 520px;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    .knx-logos {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      margin-bottom: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      flex-wrap: wrap;
+    }
+
+    .knx-partner {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: var(--swh-btn-radius);
+      color: rgba(255, 255, 255, 0.95);
+      transition: border-color .2s, color .22s;
+      text-decoration: none;
+      background: transparent;
+    }
+
+    .knx-partner::before,
+    .knx-partner::after {
+      background: var(--accent);
+    }
+
+    .knx-partner:hover {
+      border-color: var(--accent);
+      color: var(--white);
+    }
+
+    .knx-partner-logo-img {
+      height: 22px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      opacity: 0.95;
+    }
+
+    .knx-partner-logo-svg {
+      height: 20px;
+      width: auto;
+      color: var(--white);
+    }
+
+    .knx-partner-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.72);
+      margin-left: 2px;
+    }
+
+    .knx-partner-arrow {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+      opacity: 0.55;
+    }
+
+    .knx-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .knx-list li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    .knx-list svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 2.5;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    .knx-img {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+    }
+
+    .knx-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .knx-tag {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      background: var(--accent);
+      color: var(--white);
+      padding: 12px 18px;
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    /* ============== WALLBOX ============== */
+    .wallbox {
+      background: var(--bg-light);
+      padding: clamp(56px, 6vw, 84px) 0 clamp(60px, 7vw, 90px);
+      position: relative;
+    }
+
+    .wallbox-inner {
+      max-width: var(--wide);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: clamp(40px, 6vw, 80px);
+      align-items: center;
+    }
+
+    .wallbox-img {
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .wallbox-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .wallbox-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--accent);
+      color: var(--white);
+      border-radius: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 8px 14px;
+      line-height: 1;
+    }
+
+    .wallbox-badge span {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    .wallbox-badge span::after {
+      content: "·";
+      margin-left: 8px;
+      opacity: 0.5;
+    }
+
+    .wallbox-text .eyebrow {
+      margin-bottom: 18px;
+    }
+
+    .knx-text .eyebrow {
+      margin-bottom: 18px;
+    }
+
+    .knx-text .eyebrow::before {
+      background: var(--accent);
+    }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+    }
+
+    .wallbox-text h2 {
+      margin-bottom: 20px;
+      max-width: 580px;
+    }
+
+    .wallbox-text>p {
+      font-size: 17px;
+      max-width: 560px;
+      margin-bottom: 36px;
+      line-height: 1.6;
+      color: var(--ink-soft);
+    }
+
+    .wallbox-usps {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px 24px;
+      list-style: none;
+      margin-bottom: 36px;
+    }
+
+    .wallbox-usps li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 15px;
+      color: var(--ink);
+      line-height: 1.45;
+    }
+
+    .wallbox-usps svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 2.5;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    /* ============== ÜBER CHRISTOPH (v16) ============== */
+    .about {
+      background: var(--bg-light);
+      color: var(--ink);
+      padding: clamp(80px, 9vw, 140px) 0;
+      position: relative;
+    }
+
+    .about-inner {
+      max-width: var(--wide);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: clamp(40px, 6vw, 96px);
+      align-items: center;
+    }
+
+    .about-text h2 {
+      color: var(--ink);
+      margin-bottom: 28px;
+      max-width: 520px;
+      font-size: clamp(44px, 5.6vw, 82px);
+      line-height: 0.98;
+      letter-spacing: -0.03em;
+    }
+
+    .about-text p {
+      color: var(--ink-soft);
+      font-size: 17px;
+      line-height: 1.65;
+      margin-bottom: 16px;
+      max-width: 560px;
+    }
+
+    .about-proof {
+      margin-top: 36px;
+      padding: 22px 24px;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 20px;
+      border-top: 2px solid var(--accent);
+      background: rgba(225, 29, 42, 0.04);
+    }
+
+    .about-proof-num {
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: clamp(48px, 5vw, 68px);
+      letter-spacing: -0.035em;
+      color: var(--accent);
+      line-height: 0.95;
+    }
+
+    .about-proof-lbl {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      line-height: 1.45;
+      max-width: 260px;
+    }
+
+    .about-img {
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      position: relative;
+      background: var(--bg-darker);
+    }
+
+    .about-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 20%;
+    }
+
+    @media (max-width: 840px) {
+      .about-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .about-img {
+        aspect-ratio: 5 / 4;
+      }
+    }
+
+    /* ============== ABOUT-US (v21a: H2 oben zentriert, Teamfoto breit, Vorteile als 4-Container-Karten) ============== */
+    .about-us {
+      background: var(--bg-light);
+      padding: clamp(72px, 8vw, 120px) 0 clamp(72px, 8vw, 110px);
+    }
+
+    .about-us-head-grid {
+      max-width: var(--wide);
+      margin: 0 auto clamp(36px, 4vw, 56px);
+      padding: 0 var(--pad);
+      display: grid;
+      grid-template-columns: 1fr minmax(220px, auto);
+      gap: clamp(32px, 5vw, 72px);
+      align-items: end;
+    }
+
+    .about-us-head-grid .about-us-proof {
+      justify-self: end;
+      text-align: right;
+    }
+
+    .about-us-head-grid .about-us-proof-lbl {
+      text-align: right;
+    }
+
+    .about-us-proof {
+      padding: 0;
+      align-self: center;
+    }
+
+    .about-us-proof-num {
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: clamp(72px, 9vw, 140px);
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+      color: var(--ink);
+    }
+
+    .about-us-proof-num em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .about-us-proof-lbl {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      line-height: 1.5;
+      margin-top: 12px;
+    }
+
+    .about-us-head-text .eyebrow {
+      margin-bottom: 18px;
+    }
+
+    .about-us-head-text h2 {
+      max-width: 720px;
+      margin: 0;
+      line-height: 1.02;
+      font-size: clamp(32px, 3.6vw, 56px);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    @media (max-width: 900px) {
+      .about-us-head-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .about-us-proof-num {
+        font-size: clamp(56px, 14vw, 88px);
+      }
+    }
+
+    .about-us-img-full {
+      max-width: var(--wide);
+      margin: 0 auto clamp(40px, 5vw, 72px);
+      padding: 0 var(--pad);
+      position: relative;
+    }
+
+    .about-us-img-full img {
+      width: 100%;
+      aspect-ratio: 18 / 7;
+      object-fit: cover;
+      object-position: 50% 50%;
+      display: block;
+      border-radius: 2px;
+    }
+
+    .about-us-img-tag {
+      position: absolute;
+      bottom: 22px;
+      left: calc(var(--pad) + 18px);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--white);
+      padding: 10px 14px;
+      background: rgba(14, 14, 16, 0.68);
+      backdrop-filter: blur(6px);
+    }
+
+    .about-us-cards {
+      max-width: var(--wide);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .about-us-card {
+      background: var(--white);
+      padding: 28px 26px 30px;
+      border-radius: 2px;
+      position: relative;
+      border-top: 3px solid var(--accent);
+      transition: transform .25s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .about-us-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .about-us-card-icon {
+      width: 40px;
+      height: 40px;
+      color: var(--accent);
+      margin-bottom: 18px;
+    }
+
+    .about-us-card-icon svg {
+      width: 40px;
+      height: 40px;
+    }
+
+    .about-us-card-num {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .about-us-card h3 {
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: clamp(20px, 1.8vw, 26px);
+      letter-spacing: -0.01em;
+      margin: 0 0 10px 0;
+      line-height: 1.18;
+      color: var(--ink);
+      /* v28: headlines auf 1 Zeile gekürzt — kein min-height Hack mehr nötig */
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .about-us-card p {
+      font-size: 14.5px;
+      line-height: 1.55;
+      color: var(--ink-soft);
+      margin: 0;
+      flex: 1;
+    }
+
+    @media (max-width: 1100px) {
+      .about-us-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .about-us-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .about-us-img-full img {
+        aspect-ratio: 3 / 2;
+      }
+    }
+
+    /* ============== TEAM ============== */
+    /* v21b: Teamfoto 16:7 full-width vor Team-Grid */
+    .team-photo-full {
+      max-width: var(--wide);
+      margin: clamp(28px, 3vw, 48px) auto clamp(40px, 4.5vw, 64px);
+      padding: 0 var(--pad);
+      position: relative;
+    }
+
+    .team-photo-full img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      object-position: 50% 25%;
+      display: block;
+      border-radius: 2px;
+    }
+
+    .team-photo-tag {
+      position: absolute;
+      bottom: 22px;
+      left: calc(var(--pad) + 18px);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--white);
+      padding: 10px 14px;
+      background: rgba(14, 14, 16, 0.70);
+      backdrop-filter: blur(6px);
+    }
+
+    @media (max-width: 640px) {
+      .team-photo-full img {
+        aspect-ratio: 4 / 3;
+        object-position: 50% 20%;
+      }
+    }
+
+    .team {
+      background: var(--white);
+      padding: clamp(56px, 6vw, 84px) 0 clamp(72px, 8vw, 100px);
+    }
+
+    .team-head {
+      max-width: var(--wide);
+      margin: 0 auto clamp(32px, 4vw, 48px);
+      padding: 0 var(--pad);
+      text-align: left;
+    }
+
+    .team-head .eyebrow {
+      justify-content: flex-start;
+      margin-bottom: 16px;
+    }
+
+    .team-head h2 {
+      max-width: 680px;
+      margin: 0;
+      font-size: clamp(32px, 3.6vw, 56px);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      font-weight: 900;
+    }
+
+    .team-head .team-intro-lead {
+      max-width: 640px;
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--ink-soft);
+    }
+
+    .team-head-proof {
+      padding: 6px 0;
+      justify-self: end;
+      min-width: 220px;
+    }
+
+    .team-head-proof-num {
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: clamp(56px, 6vw, 88px);
+      line-height: 1;
+      letter-spacing: -0.035em;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .team-head-proof-num em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .team-head-proof-lbl {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 900px) {
+      .team-head-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .team-head-proof {
+        justify-self: start;
+      }
+    }
+
+    .team-grid {
+      max-width: var(--wide);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 1300px) {
+      .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 620px) {
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Legacy-Placeholder-Styles aus frueheren Team-Versionen */
+    .team-card-img--placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.025) 0 14px, transparent 14px 28px),
+        linear-gradient(160deg, #1a1a22 0%, #0a0a0c 100%);
+      color: rgba(255, 255, 255, 0.4);
+      position: relative;
+    }
+
+    .team-card-placeholder-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.55);
+      padding: 8px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+    }
+
+    /* Legacy-Placeholder (alter Stil aus v22) */
+    .team-card-img-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(160deg, #181820 0%, #0a0a0c 100%);
+      color: rgba(255, 255, 255, 0.35);
+      position: relative;
+    }
+
+    .team-card-placeholder-icon {
+      width: 56px;
+      height: 56px;
+    }
+
+    .team-card-placeholder-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .team-card-img-placeholder::after {
+      content: "Foto folgt";
+      position: absolute;
+      bottom: 18px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .team-card {
+      background: var(--bg-darker);
+      color: var(--white);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .team-card-img {
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      background: var(--bg-dark);
+    }
+
+    .team-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 25%;
+    }
+
+    .team-card-body {
+      padding: 28px 24px 32px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .team-card-name {
+      font-family: var(--display);
+      font-weight: 900;
+      font-size: 24px;
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+      color: var(--white);
+      margin-bottom: 6px;
+      /* v26: Mindesthöhe = 1 Zeile, JS equalizer übernimmt den Rest */
+      min-height: calc(1.15em * 1);
+    }
+
+    .team-card-role {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.4;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      /* v26: Reserve 2 Zeilen, damit "Kundenbetreuung & Disposition" nicht das Body
+     darunter verschiebt — JS equalizer übersteuert auf den tatsächlichen Max-Wert */
+      min-height: calc(1.4em * 2);
+    }
+
+    .team-card-qual {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.55;
+      flex: 1;
+    }
+
+    /* ============== FAQ ============== */
+    .faq {
+      background: var(--bg-light);
+      padding: clamp(100px, 12vw, 160px) 0;
+      /* v19d: border-top oben entfernt laut Raphael */
+    }
+
+    .faq-head {
+      max-width: var(--wide);
+      margin: 0 auto clamp(40px, 5vw, 64px);
+      padding: 0 var(--pad);
+      text-align: left;
+    }
+
+    .faq-head-inner {
+      max-width: 820px;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .faq-head .eyebrow {
+      justify-content: flex-start;
+    }
+
+    .faq-head h2 {
+      max-width: 820px;
+      margin: 0;
+      text-align: left;
+    }
+
+    .faq-list {
+      max-width: var(--wide);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+    }
+
+    .faq-list-inner {
+      max-width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 48px;
+    }
+
+    .faq-list .faq-item {
+      max-width: 100%;
+    }
+
+    @media (max-width: 900px) {
+      .faq-list-inner {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--line);
+      padding: 0;
+    }
+
+    /* v19e: keine Linie über der ersten Reihe (Raphael-Anweisung) */
+    .faq-list-inner>.faq-item:nth-child(-n+2) {
+      border-top: none;
+    }
+
+    @media (max-width: 900px) {
+      .faq-list-inner>.faq-item:nth-child(-n+2) {
+        border-top: initial;
+      }
+
+      .faq-list-inner>.faq-item:first-child {
+        border-top: none;
+      }
+    }
+
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 28px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 32px;
+      text-align: left;
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: clamp(18px, 1.6vw, 24px);
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      transition: color .2s;
+    }
+
+    .faq-q:hover {
+      color: var(--accent);
+    }
+
+    .faq-toggle {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border: 1.5px solid var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      transition: background .2s, border-color .2s;
+    }
+
+    .faq-q:hover .faq-toggle {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    .faq-toggle::before,
+    .faq-toggle::after {
+      content: "";
+      position: absolute;
+      background: currentColor;
+    }
+
+    .faq-toggle::before {
+      width: 14px;
+      height: 2px;
+    }
+
+    .faq-toggle::after {
+      width: 2px;
+      height: 14px;
+      transition: transform .25s;
+    }
+
+    .faq-item.open .faq-toggle::after {
+      transform: rotate(90deg);
+    }
+
+    .faq-item.open .faq-toggle {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--white);
+    }
+
+    .faq-item.open .faq-q {
+      color: var(--accent);
+    }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .35s ease;
+    }
+
+    .faq-item.open .faq-a {
+      max-height: 600px;
+    }
+
+    .faq-a-inner {
+      padding: 4px 0 32px;
+      max-width: 820px;
+    }
+
+    .faq-a-inner p {
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--ink-soft);
+    }
+
+    /* ============== BIG CTA ============== */
+    .big-cta {
+      background: var(--bg-darker);
+      color: var(--white);
+      padding: clamp(100px, 12vw, 160px) 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .big-cta-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .big-cta-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.22;
+    }
+
+    .big-cta-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(7, 7, 9, 0.92) 0%, rgba(7, 7, 9, 0.7) 50%, rgba(7, 7, 9, 0.92) 100%);
+      z-index: 1;
+    }
+
+    .big-cta-inner {
+      position: relative;
+      z-index: 2;
+      max-width: var(--wide);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      display: grid;
+      grid-template-columns: 0.85fr 1.25fr;
+      gap: clamp(40px, 6vw, 80px);
+      align-items: center;
+    }
+
+    .big-cta-text .eyebrow {
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+
+    .big-cta-text .eyebrow::before {
+      background: var(--accent);
+    }
+
+    .big-cta-text h2 {
+      color: var(--white);
+      letter-spacing: -0.03em;
+      margin-bottom: 28px;
+      line-height: 1;
+    }
+
+    .big-cta-sub {
+      color: rgba(255, 255, 255, 0.78) !important;
+      font-size: 17px;
+      line-height: 1.55;
+      max-width: 520px;
+      margin-bottom: 28px;
+    }
+
+    .big-cta-checks {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 0 0 32px;
+      padding: 0;
+    }
+
+    .big-cta-checks li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .big-cta-checks svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      color: var(--accent);
+    }
+
+    /* Grosser Phone-Button mit kantigem Fill-Hover */
+    /* v19d: kleiner + Pixel-Sweep oben/unten abwechselnd wie Indie-Button-Familie */
+    .big-cta-phone-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--accent);
+      color: var(--white);
+      padding: 12px 18px;
+      border-radius: 2px;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      max-width: 320px;
+      transition: color .22s;
+      text-decoration: none;
+    }
+
+    .big-cta-phone-btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 50%;
+      background: var(--ink);
+      transform: translateX(-101%);
+      transition: transform .58s steps(7);
+      z-index: -1;
+    }
+
+    .big-cta-phone-btn::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50%;
+      background: var(--ink);
+      transform: translateX(-101%);
+      transition: transform .58s steps(7);
+      transition-delay: calc(0.58s / 7 / 2);
+      z-index: -1;
+    }
+
+    .big-cta-phone-btn:hover::before,
+    .big-cta-phone-btn:hover::after {
+      transform: translateX(0);
+    }
+
+    .big-cta-phone-icon {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.14);
+      border-radius: 2px;
+    }
+
+    .big-cta-phone-icon svg {
+      width: 18px;
+      height: 18px;
+      color: var(--white);
+    }
+
+    .big-cta-phone-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      flex: 1;
+    }
+
+    .big-cta-phone-text small {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.82;
+    }
+
+    .big-cta-phone-text strong {
+      font-family: var(--mono);
+      font-size: clamp(14px, 1.2vw, 16px);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .big-cta-phone-btn .btn-arrow {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-left: 8px solid currentColor;
+      margin-left: 4px;
+      transition: transform .22s steps(4);
+    }
+
+    .big-cta-phone-btn:hover .btn-arrow {
+      transform: translateX(4px);
+    }
+
+    /* ============== FUNNEL FORM ============== */
+    .funnel {
+      background: var(--white);
+      color: var(--ink);
+      padding: 34px 32px 30px;
+      border-radius: 2px;
+      position: relative;
+    }
+
+    .funnel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px;
+      gap: 16px;
+    }
+
+    .funnel-head h3 {
+      color: var(--ink);
+      font-weight: 800;
+      letter-spacing: -0.015em;
+      line-height: 1.12;
+    }
+
+    .funnel-progress {
+      display: flex;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .funnel-dot {
+      width: 28px;
+      height: 4px;
+      background: var(--line);
+      border-radius: 999px;
+      transition: background .3s;
+    }
+
+    .funnel-dot.active {
+      background: var(--accent);
+    }
+
+    /* Funnel-Steps: absolut gestapelt mit Slide-Transition */
+    .funnel-stage {
+      position: relative;
+      min-height: 340px;
+    }
+
+    .funnel-step {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      opacity: 0;
+      transform: translateX(32px);
+      pointer-events: none;
+      transition: opacity .3s ease, transform .36s cubic-bezier(.4, .2, .2, 1);
+    }
+
+    .funnel-step.active {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: auto;
+    }
+
+    .funnel-step.leaving-left {
+      opacity: 0;
+      transform: translateX(-32px);
+    }
+
+    .funnel-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .funnel-question {
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: -0.015em;
+      color: var(--ink);
+      line-height: 1.25;
+      margin-bottom: 4px;
+    }
+
+    .funnel-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .funnel-option {
+      text-align: left;
+      background: var(--bg-light);
+      border: 1.5px solid var(--line);
+      padding: 16px 16px;
+      font-family: var(--body);
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ink);
+      cursor: pointer;
+      border-radius: 2px;
+      transition: border-color .18s, background .18s, color .18s, transform .1s;
+      line-height: 1.3;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .funnel-option small {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: var(--ink-soft);
+      font-weight: 400;
+      transition: color .18s;
+    }
+
+    /* Full-Fill Hover in CI-Rot mit weisser Schrift */
+    .funnel-option:hover,
+    .funnel-option.selected {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--white);
+    }
+
+    .funnel-option:hover small,
+    .funnel-option.selected small {
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .funnel-option:active {
+      transform: scale(0.97);
+    }
+
+    .funnel-fields {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .funnel-field input,
+    .funnel-field textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid var(--line);
+      background: var(--bg-light);
+      font-family: var(--body);
+      font-size: 15px;
+      color: var(--ink);
+      border-radius: 2px;
+      outline: none;
+      transition: border-color .2s;
+      resize: vertical;
+    }
+
+    .funnel-field label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .funnel-field input:focus,
+    .funnel-field textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .funnel-nav {
+      display: flex;
+      gap: 10px;
+      margin-top: auto;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .funnel-back,
+    .funnel-next,
+    .funnel-submit {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 14px 20px;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background .2s, color .2s, border-color .2s;
+      border: 1.5px solid var(--ink);
+    }
+
+    .funnel-back {
+      background: transparent;
+      color: var(--ink);
+      border-color: var(--line);
+    }
+
+    .funnel-back:hover {
+      border-color: var(--ink);
+    }
+
+    .funnel-back:disabled {
+      opacity: 0.35;
+      cursor: default;
+    }
+
+    .funnel-next,
+    .funnel-submit {
+      background: var(--ink);
+      color: var(--white);
+      border-color: var(--ink);
+      margin-left: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .funnel-next:hover,
+    .funnel-submit:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .funnel-done {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 30px 0;
+    }
+
+    .funnel-done.active {
+      display: flex;
+    }
+
+    .funnel-done-check {
+      width: 44px;
+      height: 44px;
+      background: var(--accent);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .funnel-done h3 {
+      font-family: var(--display);
+      font-weight: 800;
+      color: var(--ink);
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .funnel-done p {
+      font-size: 15px;
+      color: var(--ink-soft);
+      line-height: 1.5;
+    }
+
+    /* Notfall-Direct-Call-Button im Funnel */
+    .funnel-emergency-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--accent);
+      color: var(--white);
+      padding: 16px 20px;
+      border-radius: 2px;
+      margin: 8px 0 4px;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .funnel-emergency-btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--ink);
+      transform: translateX(-100%);
+      transition: transform .34s steps(6);
+      z-index: -1;
+    }
+
+    .funnel-emergency-btn:hover::before {
+      transform: translateX(0);
+    }
+
+    .funnel-emergency-btn .big-cta-phone-icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    .funnel-emergency-btn .big-cta-phone-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .funnel-emergency-btn .big-cta-phone-text small {
+      font-size: 10px;
+    }
+
+    .funnel-emergency-btn .big-cta-phone-text strong {
+      font-size: 18px;
+    }
+
+    .funnel-hint {
+      font-size: 14px;
+      color: var(--ink-soft);
+      line-height: 1.5;
+      margin: 10px 0 4px;
+    }
+
+    /* ============== FAQ CLOSE ============== */
+    .faq-close {
+      max-width: var(--wide);
+      margin: 32px auto 0;
+      padding: 20px var(--pad) 0;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .faq-close-text {
+      font-size: 17px;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .faq-close-text .faq-close-sub {
+      color: var(--ink-soft);
+      font-weight: 400;
+      display: block;
+      margin-top: 4px;
+      font-size: 15px;
+    }
+
+    .faq-close-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 2px;
+      transition: opacity .2s;
+    }
+
+    .faq-close-cta:hover {
+      opacity: 0.7;
+    }
+
+    .faq-close-cta svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.6;
+    }
+
+    @media (max-width: 640px) {
+      .faq-close {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        padding-right: 88px;
+      }
+
+      .faq-close-text .faq-close-sub {
+        max-width: 92%;
+      }
+    }
+
+    /* ============== FOOTER PARTNER STRIP ============== */
+    .footer-partners {
+      background: var(--bg-dark);
+      padding: 44px 0 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-partners-inner {
+      max-width: var(--wide);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .footer-partners-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.45);
+      white-space: nowrap;
+    }
+
+    .footer-partners-logos {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .footer-partner-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255, 255, 255, 0.85);
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .footer-partner-chip em {
+      font-style: normal;
+      color: rgba(255, 255, 255, 0.45);
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: none;
+      font-size: 11px;
+    }
+
+    @media (max-width: 720px) {
+      .footer-partners-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      .footer-partners-logos {
+        gap: 24px;
+      }
+    }
+
+    /* ============== FOOTER ============== */
+    .footer {
+      background: var(--bg-dark);
+      color: var(--white);
+      padding: 60px 0 32px;
+    }
+
+    .footer-inner {
+      max-width: var(--wide);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 40px;
+    }
+
+    .footer-brand .nav-logo {
+      margin-bottom: 22px;
+    }
+
+    .footer-brand .nav-logo img {
+      height: 42px;
+    }
+
+    .footer-brand p {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 340px;
+      margin-bottom: 20px;
+    }
+
+    /* Ausnahme: Footer-Column-Labels mit eigenem Token dokumentiert (siehe :root --fs-footer-label) */
+    .footer-col h4 {
+      color: var(--white);
+      font-family: var(--mono);
+      font-size: var(--fs-footer-label);
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-col a {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
+      transition: color .2s;
+    }
+
+    .footer-col a:hover {
+      color: var(--accent);
+    }
+
+    .footer-col address {
+      font-style: normal;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .footer-col address a {
+      display: block;
+    }
+
+    .footer-bottom {
+      max-width: var(--wide);
+      margin: 0 auto;
+      padding: 24px var(--pad) 0;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .footer-bottom a {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .footer-service-area {
+      max-width: var(--wide);
+      margin: 0 auto;
+      padding: 28px var(--pad) 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .footer-service-area-inner {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: baseline;
+    }
+
+    .footer-service-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5);
+      flex-shrink: 0;
+    }
+
+    .footer-service-list {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 13px;
+      line-height: 1.7;
+      flex: 1;
+      min-width: 280px;
+    }
+
+    /* ============== FLOATING PHONE ============== */
+    .float-phone {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--accent);
+      color: var(--white);
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 99;
+      box-shadow: 0 10px 30px rgba(225, 29, 42, 0.45);
+      transition: background .2s, transform .2s;
+    }
+
+    .float-phone:hover {
+      background: var(--accent-dark);
+      transform: scale(1.05);
+    }
+
+    .float-phone svg {
+      width: 26px;
+      height: 26px;
+      stroke: var(--white);
+      fill: none;
+      stroke-width: 2;
+    }
+
+    /* ============== RESPONSIVE ============== */
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .nav-phone span {
+        display: none;
+      }
+
+      .nav-phone {
+        padding: 10px 14px;
+      }
+
+      .nav-burger {
+        display: block;
+      }
+
+      .hero {
+        min-height: 92vh;
+        max-height: 820px;
+      }
+
+      .hero-bg img {
+        object-position: 45% top;
+      }
+
+      .hero-overlay {
+        background: linear-gradient(180deg, rgba(7, 7, 9, 0.78) 0%, rgba(7, 7, 9, 0.58) 40%, rgba(7, 7, 9, 0.25) 100%);
+      }
+
+      .hero h1 {
+        font-size: clamp(30px, 8vw, 42px);
+        line-height: 1.02;
+        max-width: 100%;
+        color: var(--white);
+      }
+
+      .hero-sub {
+        color: var(--white);
+        opacity: 0.82;
+      }
+
+      .hero-inner>* {
+        max-width: 100%;
+      }
+
+      .hero-sub {
+        font-size: 16px;
+      }
+
+      .hero-eyebrow {
+        margin-bottom: 18px;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+      }
+
+      .hero-ctas .btn-primary,
+      .hero-ctas .btn-secondary {
+        justify-content: center;
+        width: 100%;
+        padding: 16px 20px;
+      }
+
+      .stripe-notdienst-inner {
+        gap: 20px;
+      }
+
+      .stripe-item {
+        font-size: 13px;
+      }
+
+      .mega-stats-head {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .mega-stats-grid-inner {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .mega-stats-grid-inner .mega-stat:nth-child(2) {
+        border-right: none;
+      }
+
+      .mega-stats-grid-inner .mega-stat:nth-child(1),
+      .mega-stats-grid-inner .mega-stat:nth-child(2) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .mega-stat-num {
+        font-size: clamp(52px, 13vw, 80px);
+      }
+
+      .bento {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .bento-01,
+      .bento-02,
+      .bento-03,
+      .bento-04,
+      .bento-05,
+      .bento-06,
+      .bento-07,
+      .bento-08 {
+        grid-column: span 2;
+        grid-row: auto;
+        min-height: 280px;
+      }
+
+      .bento-01 {
+        min-height: 360px;
+      }
+
+      .bento-06 {
+        min-height: 360px;
+      }
+
+      .diag-break-num {
+        display: none;
+      }
+
+      .ablauf-steps {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .knx-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .knx-img {
+        aspect-ratio: 4 / 3;
+      }
+
+      .wallbox-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .wallbox-img {
+        aspect-ratio: 4 / 3;
+        order: -1;
+      }
+
+      .wallbox-usps {
+        grid-template-columns: 1fr;
+      }
+
+      .about-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .about-years {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+        border-radius: 6px;
+        overflow: hidden;
+      }
+
+      .about-year-num {
+        font-size: 24px;
+      }
+
+      .about-year-lbl {
+        font-size: 11px;
+      }
+
+      .team-head {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .big-cta-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+      }
+
+      .footer-brand {
+        grid-column: span 2;
+      }
+
+      .float-phone {
+        display: flex;
+      }
+
+      /* Mobile-Fixes 2026-04-28 (v31-mobile-review.md MUSS-Punkte) */
+      /* Bento-Card Body lesbarer auf Bild-BG: Overlay staerker mobile */
+      .bento-card-grad {
+        height: 78%;
+        background: linear-gradient(to top,
+            rgba(7, 7, 9, 0.96) 0%,
+            rgba(7, 7, 9, 0.92) 35%,
+            rgba(7, 7, 9, 0.78) 65%,
+            rgba(7, 7, 9, 0.38) 88%,
+            rgba(7, 7, 9, 0) 100%);
+      }
+
+      /* Bento-Card-Image dunkler hinterlegen mobile */
+      .bento-card-img img {
+        opacity: 0.62;
+      }
+
+      /* About-us-proof "363+" mobile linksbuendig + voll Spaltenbreite */
+      .about-us-head-grid .about-us-proof {
+        justify-self: start;
+        text-align: left;
+        margin-top: 8px;
+      }
+
+      .about-us-head-grid .about-us-proof-lbl {
+        text-align: left;
+      }
+
+      /* KNX/LOXONE Partner-Buttons: klare Button-Affordance mobile (Filled-State by default) */
+      .knx-partner {
+        background: var(--ink);
+        color: var(--white);
+        border-color: var(--ink);
+      }
+
+      .knx-partner-label {
+        color: var(--white);
+      }
+
+      .knx-partner-arrow {
+        color: var(--white);
+      }
+
+      /* Slider-Pagination Touch-Targets mobile */
+      .ablauf-nav-btn,
+      .ablauf-prev,
+      .ablauf-next,
+      [class*="slider-arrow"],
+      [class*="pagination-btn"] {
+        min-width: 44px;
+        min-height: 44px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h2 {
+        font-size: clamp(28px, 8vw, 38px);
+      }
+
+      .hero h1 {
+        font-size: clamp(34px, 9vw, 42px);
+      }
+
+      .mega-stats-grid-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .mega-stats-grid-inner .mega-stat {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .mega-stats-grid-inner .mega-stat:last-child {
+        border-bottom: none;
+      }
+
+      .about-years {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-brand {
+        grid-column: span 1;
+      }
+
+      /* Funnel-Options (Stepper-Form Service-Wahl) auf 1-Column auf engen Mobiles */
+      .funnel-options {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .funnel-option {
+        padding: 14px 14px;
+        min-height: 56px;
+      }
+    }
+
+    /* === SCROLL REVEAL v31g — REAKTIVIERT (User 2026-04-28) ===
+   Animation kommt zurueck, aber als Section-Bulk-Reveal mit weicher Bewegung
+   und fruehem Trigger. Kein per-Element-Stagger, kein "weisser Strich". */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition:
+        opacity .65s cubic-bezier(0.19, 1, 0.22, 1),
+        transform .7s cubic-bezier(0.19, 1, 0.22, 1);
+      will-change: opacity, transform;
+    }
+
+    [data-reveal].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+      will-change: auto;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
+    /* Word-Reveal Headlines REAKTIVIERT — Wort-Welle in einem Section-Reveal,
+   weich + kurz, damit es sich nicht abgehackt anfuehlt. */
+    [data-words] {
+      display: block;
+    }
+
+    [data-words] .word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(14px);
+      transition:
+        opacity .55s cubic-bezier(0.19, 1, 0.22, 1),
+        transform .55s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    [data-words] .word .word-inner {
+      display: inline-block;
+    }
+
+    [data-words].is-visible .word {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      [data-words] .word {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
+    /* Eyebrow Scramble-Reveal ("Zahlenschloss" — gleiche Animation wie KNX/NIV Mega-Stats).
+   JS triggert scrambleTextNodes() auf dem Eyebrow-Element wenn .is-visible kommt.
+   Buchstaben rollen durch Zufalls-Chars und rasten von links nach rechts ein.
+   Die hier definierte CSS-Schicht ist nur fuer den weichen Container-Fade
+   (opacity + leichter Y-Offset) sowie den ::before-Strich. */
+    [data-chars] {
+      opacity: 0;
+      transform: translateY(6px);
+      transition:
+        opacity 0.55s cubic-bezier(0.19, 1, 0.22, 1),
+        transform 0.55s cubic-bezier(0.19, 1, 0.22, 1);
+      will-change: opacity, transform;
+    }
+
+    [data-chars].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+      will-change: auto;
+    }
+
+    /* Eyebrow ::before (Strich) — wird mit weichem Easing von 0 auf 28/36px gezogen. */
+    [data-chars]::before {
+      width: 0 !important;
+      transition: width 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    [data-chars].is-visible::before {
+      width: 28px !important;
+    }
+
+    .hero-eyebrow[data-chars]::before,
+    .diag-break-eyebrow[data-chars]::before {
+      width: 0 !important;
+    }
+
+    .hero-eyebrow[data-chars].is-visible::before,
+    .diag-break-eyebrow[data-chars].is-visible::before {
+      width: 36px !important;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      [data-chars] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+
+      [data-chars]::before {
+        width: 28px !important;
+        transition: none !important;
+      }
+
+      .hero-eyebrow[data-chars]::before,
+      .diag-break-eyebrow[data-chars]::before {
+        width: 36px !important;
+      }
+    }
+
+    /* === BILD-REVEAL v31g — REAKTIVIERT (User 2026-04-28) ===
+   Bilder kommen mit weichem Fade + minimalem Skalieren rein, kein Mask, kein Slide.
+   Beim Section-Bulk-Reveal werden alle Bilder einer Section gleichzeitig getriggert. */
+    [data-img-reveal]>img,
+    [data-img-reveal]>picture>img {
+      opacity: 0;
+      transform: scale(1.02);
+      transition:
+        opacity .8s cubic-bezier(0.19, 1, 0.22, 1),
+        transform .9s cubic-bezier(0.19, 1, 0.22, 1);
+      will-change: opacity, transform;
+    }
+
+    [data-img-reveal].is-visible>img,
+    [data-img-reveal].is-visible>picture>img {
+      opacity: 1;
+      transform: scale(1);
+      will-change: auto;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      [data-img-reveal]>img,
+      [data-img-reveal]>picture>img {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
+    /* Counter Tabular-Nums damit die Breite nicht hin- und herwackelt waehrend des Hochzaehlens. */
+    [data-counter],
+    .about-us-proof-num,
+    .mega-stat-num {
+      font-variant-numeric: tabular-nums;
+      font-feature-settings: "tnum" 1, "lnum" 1;
+    }
+
+    /* FOUC-Schutz fuer Hero-Targets:
+   Bevor das JS splitWords/splitChars setzt, sind die Atome noch nicht in
+   .word/.char Spans verpackt — wir verstecken Container bis Setup geschehen ist,
+   damit es nicht erst sichtbar ist und dann verschwindet. */
+    .hero h1:not([data-words-applied]),
+    .hero-eyebrow:not([data-chars-applied]) {
+      opacity: 0;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .hero h1:not([data-words-applied]),
+      .hero-eyebrow:not([data-chars-applied]) {
+        opacity: 1;
+      }
+    }
+
+    /* === BTN-OUTLINE-INK: sichtbarer Outline-Button auf hellem Grund === */
+    .btn-outline-ink {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      padding: var(--swh-btn-padding-y) var(--swh-btn-padding-x);
+      font-family: var(--mono);
+      font-size: 15px;
+      font-weight: 500;
+      border: 1.5px solid rgba(14, 14, 16, 0.35);
+      border-radius: var(--swh-btn-radius);
+      background: transparent;
+      transition: color .22s, border-color .2s;
+      cursor: pointer;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .btn-outline-ink::before,
+    .btn-outline-ink::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      transform: translateX(-101%);
+      transition: transform var(--swh-btn-duration) steps(var(--swh-btn-steps));
+      z-index: -1;
+      pointer-events: none;
+      background: var(--accent);
+    }
+
+    .btn-outline-ink::before {
+      top: 0;
+    }
+
+    .btn-outline-ink::after {
+      bottom: 0;
+      transition-delay: var(--swh-btn-half);
+    }
+
+    .btn-outline-ink:hover::before,
+    .btn-outline-ink:hover::after {
+      transform: translateX(0);
+    }
+
+    .btn-outline-ink:hover {
+      color: var(--white);
+      border-color: var(--accent);
+    }
+
+    /* === PAGE LOAD ANIMATION (v28) === */
+    @keyframes swh-enter-up {
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes swh-enter-left {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* v29: Hero h1 + hero-eyebrow laufen ueber data-words / data-chars (siehe oben).
+   hero-sub, hero-services, hero-ctas bleiben bei page-loaded keyframes — etwas langsamer
+   und mit groesserem Stagger fuer entspannten Auftritt. */
+    .hero-sub,
+    .hero-services,
+    .hero-ctas {
+      animation-duration: 1.05s;
+      animation-fill-mode: both;
+      animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+      animation-play-state: paused;
+      will-change: opacity, transform;
+    }
+
+    body.page-loaded .hero-sub {
+      animation-name: swh-enter-up;
+      animation-play-state: running;
+      animation-delay: 0.65s;
+    }
+
+    body.page-loaded .hero-services {
+      animation-name: swh-enter-up;
+      animation-play-state: running;
+      animation-delay: 0.85s;
+    }
+
+    body.page-loaded .hero-ctas {
+      animation-name: swh-enter-up;
+      animation-play-state: running;
+      animation-delay: 1.05s;
+    }
+
+    @media (max-width: 900px) {
+      body.page-loaded .hero-sub {
+        animation-name: swh-enter-up;
+        animation-delay: 0.55s;
+        animation-duration: 0.85s;
+      }
+
+      body.page-loaded .hero-services {
+        animation-name: swh-enter-up;
+        animation-delay: 0.72s;
+        animation-duration: 0.8s;
+      }
+
+      body.page-loaded .hero-ctas {
+        animation-name: swh-enter-up;
+        animation-delay: 0.88s;
+        animation-duration: 0.8s;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .hero-sub,
+      .hero-services,
+      .hero-ctas {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========== SWISS-GRID HAIRLINES (v16 B-Struktur) =========== -->
+  <div class="swiss-grid" aria-hidden="true">
+    <div class="swiss-grid-inner">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <!-- =========== NAV =========== -->
+  <nav class="nav" id="top">
+    <div class="nav-inner">
+      <a href="#top" class="nav-logo" aria-label="swisshelp"><img src="./images/favicon.svg" alt="swisshelp"></a>
+      <div class="nav-links">
+        <a href="#services">Leistungen</a>
+        <a href="#knx">Smart Home</a>
+        <a href="#team">Team</a>
+        <a href="#faq">FAQ</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+      <div class="nav-actions" style="display:inline-flex;align-items:center;gap:0;">
+        <a href="tel:+41445400835" class="nav-phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+          <span>044 540 08 35</span>
+        </a>
+        <button class="nav-burger" id="nav-burger" aria-label="Menü öffnen" aria-expanded="false"
+          aria-controls="nav-mobile">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile" id="nav-mobile" role="dialog" aria-label="Navigation">
+      <a href="#services">Leistungen</a>
+      <a href="#knx">Smart Home</a>
+      <a href="#team">Team</a>
+      <a href="#faq">FAQ</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="tel:+41445400835" class="nav-mobile-call">044 540 08 35 anrufen</a>
+    </div>
+  </nav>
+
+  <!-- =========== HERO =========== -->
+  <section class="hero">
+    <div class="hero-bg">
+      <!-- Backdrop-Layer: blurred 4K-Extension füllt jedes Ultrawide-Aspect, Christoph-Kopf bleibt sicher -->
+      <img class="hero-bg-extend" src="./reference/_AMA7416.jpg" alt="" aria-hidden="true" loading="eager"
+        decoding="async">
+      <!-- Main-Image: v37 Zuschnitt mit mehr Headroom für Christoph, scharf, max 2800px zentriert -->
+      <img class="hero-bg-main" src="./reference/_AMA7416.jpg"
+        alt="Offener Schaltschrank, sauber verdrahtet, in der Werkstatt von Swisshelp Elektro" loading="eager"
+        fetchpriority="high" decoding="async">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-stage">
+      <div class="hero-inner">
+        <div class="hero-eyebrow">Elektro-Service · Weiningen ZH</div>
+        <h1>Massgeschneiderte Gesamtkonzepte für moderne Elektrotechnik.</h1>
+        <p class="hero-sub">Wir planen und bauen Ihre Elektrotechnik in Zürich und im Limmattal. Eine durchgängige
+          Ansprechperson, saubere Ausführung, Qualität vor Quantität.</p>
+        <div class="hero-ctas">
+          <a href="tel:+41445400835" class="btn-primary">
+            <span class="btn-text">Anrufen 044 540 08 35</span>
+            <span class="btn-arrow" aria-hidden="true"></span>
+          </a>
+          <a href="#kontakt" class="btn-outline-light">Termin anfragen</a>
+        </div>
+      </div>
+    </div>
+    <!-- Rote Trust-Leiste am unteren Ende des Hero, volle Breite (v13-Style, Raphael 2026-04-24) -->
+    <section class="trust-bar" aria-label="Ihr Kontakt">
+      <div class="trust-bar-inner">
+        <span class="trust-item"><strong>Ihr Kontakt</strong></span>
+        <span class="trust-sep" aria-hidden="true"></span>
+        <span class="trust-item">044 540 08 35</span>
+        <span class="trust-sep" aria-hidden="true"></span>
+        <span class="trust-item">Mo-Fr 07:30-17:30</span>
+        <span class="trust-sep" aria-hidden="true"></span>
+        <span class="trust-item">Weiningen ZH · 50 km Radius</span>
+        <span class="trust-sep" aria-hidden="true"></span>
+        <span class="trust-item">Pikett 7x24</span>
+      </div>
+    </section>
+  </section>
+
+  <!-- =========== VIER VERSPRECHEN (konkret, hochgezogen) =========== -->
+  <section class="about-us" id="versprechen">
+    <div class="about-us-head-grid">
+      <div class="about-us-head-text" data-reveal>
+        <div class="eyebrow">Vier Versprechen</div>
+        <h2>Vier Versprechen, die wir halten.</h2>
+      </div>
+      <div class="about-us-proof" data-reveal style="--ri:1">
+        <div class="about-us-proof-num">400<em>+</em></div>
+        <div class="about-us-proof-lbl">Installationen im Limmattal.<br>Familienbetrieb mit Wurzeln seit 1990.</div>
+      </div>
+    </div>
+    <div class="about-us-cards">
+      <article class="about-us-card" data-reveal style="--ri:0">
+        <div class="about-us-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+            <polyline points="16 11 18 13 22 9" />
+          </svg></div>
+        <div class="about-us-card-num">01</div>
+        <h3>Keine Subunternehmer</h3>
+        <p>Vom ersten Telefonat bis zur Schlussabnahme dieselbe Person im Lead. Keine Subunternehmen im Keller, keine
+          Übergabe nach dem Abholen des Auftrags.</p>
+      </article>
+      <article class="about-us-card" data-reveal style="--ri:1">
+        <div class="about-us-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            <polyline points="9 12 11 14 15 10" />
+          </svg></div>
+        <div class="about-us-card-num">02</div>
+        <h3>Eidg. Sicherheitsexperte</h3>
+        <p>Periodische Kontrollen, Sicherheitsnachweise, Mängelbehebung aus einer Hand. Nicht über eine Drittfirma nach
+          Monaten Wartezeit.</p>
+      </article>
+      <article class="about-us-card" data-reveal style="--ri:2">
+        <div class="about-us-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+            <line x1="16" y1="13" x2="8" y2="13" />
+            <line x1="16" y1="17" x2="8" y2="17" />
+            <polyline points="10 9 9 9 8 9" />
+          </svg></div>
+        <div class="about-us-card-num">03</div>
+        <h3>Klare Offerte</h3>
+        <p>Aufwand pro Position nachvollziehbar, Material mit Stückzahl und Preis, keine Überraschungen am Ende. Die
+          Offerte bleibt die Offerte.</p>
+      </article>
+      <article class="about-us-card" data-reveal style="--ri:3">
+        <div class="about-us-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="6" />
+            <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
+          </svg></div>
+        <div class="about-us-card-num">04</div>
+        <h3>KNX &amp; LOXONE Partner</h3>
+        <p>Smart Home ist kein App-Gadget, sondern verdrahtete Systemtechnik. Geplant und programmiert nach offiziellem
+          Hersteller-Standard.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- =========== SERVICES BENTO =========== -->
+  <section class="services" id="services">
+    <div class="services-head" data-reveal>
+      <div class="eyebrow">Unsere Leistungen</div>
+      <h2>Unsere Dienstleistungen.</h2>
+    </div>
+
+    <div class="bento">
+
+      <article class="bento-card bento-01">
+        <div class="bento-card-img"><img src="./reference/_AMA7438.jpg" loading="eager"
+            alt="Hand mit Schraubenzieher im Verteiler mit farbigen Kabeln"></div>
+        <div class="bento-card-grad"></div>
+        <span class="bento-card-chip">Sanierung + Umbau</span>
+        <div class="bento-card-content">
+          <div class="bento-card-body">
+            <h3>Elektroinstallationen</h3>
+            <p>Planung und Ausführung für Sanierung, Umbau und Badumbau. Vom Schema bis zur Inbetriebnahme, inklusive
+              Photovoltaik-Anschluss ans Hausnetz.</p>
+            <a href="#kontakt" class="bento-card-link" data-scramble>Mehr erfahren<span class="arrow"></span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="bento-card bento-02">
+        <div class="bento-card-img"><img src="./reference/_AMA7867.jpg" loading="eager"
+            alt="Techniker am offenen Sicherungskasten"></div>
+        <div class="bento-card-grad"></div>
+        <span class="bento-card-chip ghost">Tagesgeschäft</span>
+        <div class="bento-card-content">
+          <div class="bento-card-body">
+            <h3>Service und Reparatur</h3>
+            <p>Defekte Lampe, gelockerte Steckdose, ausgelöste Sicherung. Schnell und sauber behoben. Ausserhalb der
+              Bürozeiten erreichen Sie unser Pikett 7x24.</p>
+            <a href="#kontakt" class="bento-card-link" data-scramble>Mehr erfahren<span class="arrow"></span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="bento-card bento-03">
+        <div class="bento-card-img"><img src="/images/_AMA7926.jpg" loading="eager"
+            alt="Umwälzpumpe mit Display im Heizungsraum"></div>
+        <div class="bento-card-grad"></div>
+        <span class="bento-card-chip ghost">Grundfos / Viessmann</span>
+        <div class="bento-card-content">
+          <div class="bento-card-body">
+            <h3>Heizung und Lüftung</h3>
+            <p>Elektrischer Anschluss und Fehlersuche an Wärmepumpe, Umwälzpumpe und Lüftungsanlage.</p>
+            <a href="#kontakt" class="bento-card-link" data-scramble>Mehr erfahren<span class="arrow"></span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="bento-card bento-04">
+        <div class="bento-card-img"><img src="./reference/_AMA8284.jpg" loading="eager"
+            alt="Sicherheitsexperte mit Messgerät bei der periodischen Kontrolle"></div>
+        <div class="bento-card-grad"></div>
+        <span class="bento-card-chip ghost">Sicherheitsnachweis</span>
+        <div class="bento-card-content">
+          <div class="bento-card-body">
+            <h3>Periodische Kontrollen</h3>
+            <p>Die Aufforderung des Netzbetreibers leiten Sie direkt an uns weiter, wir wickeln den Rest ab.
+              Durchgeführt vom eidg. dipl. Sicherheitsexperten im eigenen Haus, inklusive Sicherheitsnachweis.</p>
+            <a href="#kontakt" class="bento-card-link" data-scramble>Mehr erfahren<span class="arrow"></span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="bento-card bento-05">
+        <div class="bento-card-img"><img src="./reference/_AMA7785.jpg" loading="eager"
+            alt="Wallbox mit angestecktem Elektroauto in heller Garage"></div>
+        <div class="bento-card-grad"></div>
+        <span class="bento-card-chip ghost">E-Mobilität</span>
+        <div class="bento-card-content">
+          <div class="bento-card-body">
+            <h3>E-Mobilität und Ladestationen</h3>
+            <p>Wir prüfen die Anschlussleistung, planen den Kabelweg, montieren die Wallbox und übernehmen die Anmeldung
+              beim Netzbetreiber.</p>
+            <a href="#kontakt" class="bento-card-link" data-scramble>Mehr erfahren<span class="arrow"></span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="bento-card bento-06">
+        <div class="bento-card-img"><img src="./reference/_AMA8178.jpg" loading="eager"
+            alt="Zwei Techniker am Schaltschrank von Swisshelp Elektro"></div>
+        <div class="bento-card-grad"></div>
+        <span class="bento-card-chip">KNX & LOXONE</span>
+        <div class="bento-card-content">
+          <div class="bento-card-body">
+            <h3>Smart Home mit KNX und LOXONE</h3>
+            <p>Als KNX zertifizierter Partner und LOXONE Partner planen, verdrahten und programmieren wir Ihr Smart Home
+              als dokumentiertes System, das über Jahre wartbar bleibt.</p>
+            <a href="#kontakt" class="bento-card-link" data-scramble>Mehr erfahren<span class="arrow"></span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="bento-card bento-07">
+        <div class="bento-card-img"><img src="/images/_AMA7510.jpg" loading="eager"
+            alt="Strukturierte Netzwerkverkabelung mit Patchpanel"></div>
+        <div class="bento-card-grad"></div>
+        <span class="bento-card-chip ghost">Cat6A / Glasfaser</span>
+        <div class="bento-card-content">
+          <div class="bento-card-body">
+            <h3>Schwachstrom und Netzwerk</h3>
+            <p>Telefon, Türsprechanlage, LAN-Verkabelung und Patchpanel. Vom Einfamilienhaus bis zum Bürostandort.</p>
+            <a href="#kontakt" class="bento-card-link" data-scramble>Mehr erfahren<span class="arrow"></span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="bento-card bento-08">
+        <div class="bento-card-img"><img src="/images/_AMA7867.jpg" loading="eager"
+            alt="Wechselrichter an der Hauswand neben der Verteilung"></div>
+        <div class="bento-card-grad"></div>
+        <span class="bento-card-chip ghost">AC-Seite</span>
+        <div class="bento-card-content">
+          <div class="bento-card-body">
+            <h3>Photovoltaik Anschluss</h3>
+            <p>Wechselrichter-Anschluss und Netzanbindung. Die DC-Seite übernimmt Ihr PV-Anbieter, wir schliessen sauber
+              ans Hausnetz an.</p>
+            <a href="#kontakt" class="bento-card-link" data-scramble>Mehr erfahren<span class="arrow"></span></a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- =========== ABLAUF (v18: Progress oben, Pfeile oben rechts, funktionierendes Auto-Play) =========== -->
+  <section class="ablauf">
+    <div class="ablauf-head" data-reveal>
+      <div class="ablauf-head-text">
+        <div class="eyebrow">So läuft ein Einsatz</div>
+        <h2>Vom Anruf bis zur Lösung in drei Schritten.</h2>
+        <p>Ob FI-Schutzschalter, defekte Steckdose oder kompletter Sicherungskasten. So erreichen Sie uns, so bereiten
+          wir uns vor und so sieht der Einsatz bei Ihnen zu Hause aus.</p>
+      </div>
+      <div class="ablauf-top-nav" aria-label="Ablauf Navigation">
+        <div class="ablauf-counter"><span id="ablauf-current">01</span> / 03</div>
+        <div class="ablauf-nav">
+          <button class="ablauf-nav-btn" data-dir="prev" aria-label="Vorheriger Schritt" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+          <button class="ablauf-nav-btn" data-dir="next" aria-label="Nächster Schritt" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="ablauf-progress-top" role="progressbar" aria-valuemin="1" aria-valuemax="3">
+      <div class="ablauf-progress-seg is-active" data-seg="1"></div>
+      <div class="ablauf-progress-seg" data-seg="2"></div>
+      <div class="ablauf-progress-seg" data-seg="3"></div>
+    </div>
+    <div class="ablauf-steps" id="ablauf-slider" style="--ablauf-interval: 5.5s;">
+      <div class="ablauf-step is-active" data-step="1">
+        <div class="ablauf-step-img">
+          <div class="ablauf-step-badge"><span class="num">01</span><span class="label">Anruf</span></div><img
+            src="./reference/_AMA7600.jpg" alt="Zwei Techniker besprechen einen Elektroplan in der Werkstatt Weiningen"
+            loading="lazy">
+        </div>
+        <div class="ablauf-step-text">
+          <h3>Sie rufen uns an</h3>
+          <p>044 540 08 35. Während Bürozeit nimmt ein Techniker direkt ab, schildert die Situation und entscheidet mit
+            Ihnen, ob wir heute noch kommen oder ein Termin planbar ist. Ausserhalb der Bürozeit erhalten Sie innert 60
+            Minuten einen Rückruf.</p>
+        </div>
+      </div>
+      <div class="ablauf-step" data-step="2">
+        <div class="ablauf-step-img">
+          <div class="ablauf-step-badge"><span class="num">02</span><span class="label">Analyse</span></div><img
+            src="./reference/_AMA7568.jpg"
+            alt="Christoph Trachsel und Mitarbeiter analysieren gemeinsam den Schaltplan vor offenem Verteiler"
+            loading="lazy">
+        </div>
+        <div class="ablauf-step-text">
+          <h3>Wir grenzen das Problem ein</h3>
+          <p>Bei Bedarf senden Sie uns ein Foto des Sicherungskastens oder des Schadens. So kommen wir bereits mit dem
+            richtigen Material und den passenden Werkzeugen. Das spart Zeit und eine zweite Anfahrt.</p>
+        </div>
+      </div>
+      <div class="ablauf-step" data-step="3">
+        <div class="ablauf-step-img">
+          <div class="ablauf-step-badge"><span class="num">03</span><span class="label">Reparatur</span></div><img
+            src="./reference/_AMA7444.jpg" alt="Swisshelp-Techniker arbeitet konzentriert am Schaltschrank"
+            loading="lazy">
+        </div>
+        <div class="ablauf-step-text">
+          <h3>Wir reparieren bis es läuft</h3>
+          <p>Vor Ort identifizieren wir die Ursache, reparieren oder ersetzen das defekte Bauteil und prüfen die
+            Funktion. Wir verlassen Ihr Haus erst, wenn alles wieder sauber funktioniert und Sie die Arbeit abgenommen
+            haben.</p>
+        </div>
+      </div>
+    </div>
+    <div class="ablauf-close">
+      Wir gehen erst, wenn Ihre Anlage sauber läuft. Sie bekommen ein Messprotokoll, die Rechnung ist nachvollziehbar,
+      <strong>offene Punkte gibt es keine</strong>.
+    </div>
+  </section>
+
+  <!-- =========== KNX =========== -->
+  <section class="knx" id="knx">
+    <div class="knx-inner">
+      <div class="knx-text" data-reveal>
+        <div class="eyebrow">Smart Home · KNX &amp; LOXONE</div>
+        <h2>Smart Home Zürich, von zertifizierten Partnern.</h2>
+        <p>Smart Home ist kein App-Spielzeug. Es ist ein System, das über Jahre zuverlässig läuft. Wir sind sowohl KNX
+          als auch LOXONE zertifizierte Partner, planen die Bus-Topologie, verdrahten den Schaltschrank und übergeben
+          Ihnen ein dokumentiertes System, das auch in fünf Jahren noch wartbar ist.</p>
+        <div class="knx-logos">
+          <a class="knx-partner" href="https://www.knx.org" target="_blank" rel="noopener noreferrer">
+            <img src="./reference/_AMA7903.jpg" alt="KNX zertifizierter Partner" class="knx-partner-logo-img"
+              loading="lazy">
+            <span class="knx-partner-label">Partner</span>
+            <svg class="knx-partner-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17L17 7M17 7H9M17 7V15" />
+            </svg>
+          </a>
+          <a class="knx-partner" href="https://www.loxone.com" target="_blank" rel="noopener noreferrer">
+            <svg class="knx-partner-logo-svg" viewBox="0 0 100 23" fill="currentColor" aria-label="LOXONE">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M91.4149 18.1044V12.2562H96.9392V8.69613H91.4149V5.93341L90.1667 4.01636H92.8082H100V0.456299H87.6289V0.471142V4.01636V18.1044V19.7067L88.9035 21.6644H100V18.1044H91.4149ZM83.4455 21.6508H83.8794V0.471191H80.4177V15.7242L72.6247 0.471191H71.489H68.8387H68.0273V21.6508H71.489V5.65867L79.6594 21.6508H80.4177H83.4455ZM63.5224 18.7948C64.4444 17.1971 64.544 15.5118 64.544 14.8618V7.21299C64.5051 3.63618 62.7241 1.86947 61.2373 1.01732C59.6341 0.0989541 57.9447 0 57.2933 0H56.0908C52.5047 0.0384399 50.7329 1.81467 49.8784 3.29784C48.958 4.89632 48.8584 6.58083 48.8584 7.23126L48.8587 14.8804C48.8973 18.4572 50.6783 20.2236 52.1651 21.0761C53.7683 21.9941 55.4573 22.093 56.1091 22.093H57.2967H57.3062C60.8942 22.0534 62.6672 20.2776 63.5224 18.7948ZM61.1099 14.8617C61.1099 16.2661 60.6111 18.6265 57.2773 18.6676H56.1095C54.6998 18.6676 52.3292 18.171 52.293 14.8617V7.23122C52.293 5.82531 52.7917 3.46069 56.1095 3.42529H57.2937C58.703 3.42529 61.0744 3.92197 61.1099 7.23122V14.8617ZM44.0577 21.6861H48.2971L42.3396 12.5366L40.2197 15.7922L44.0577 21.6861ZM42.3396 9.62064L48.2971 0.471191H44.0577L40.2197 6.36505L42.3396 9.62064ZM41.3893 11.0787L34.482 0.471191H30.2422L37.1495 11.0787L30.2422 21.6862H34.482L41.3893 11.0787ZM28.6586 18.7948C29.5806 17.1971 29.6798 15.5118 29.6798 14.8618V7.21299C29.6416 3.63618 27.8602 1.86947 26.3731 1.01732C24.7703 0.0989541 23.0809 0 22.429 0H21.227C17.6405 0.0384399 15.869 1.81467 15.0146 3.29784C14.0937 4.89632 13.9941 6.58083 13.9941 7.23126V14.8804C14.0331 18.4572 15.8141 20.2236 17.3016 21.0761C18.904 21.9941 20.5931 22.093 21.2453 22.093H22.4329H22.442C26.0308 22.0534 27.8034 20.2776 28.6586 18.7948ZM26.2443 14.8617C26.2443 16.2661 25.7462 18.6265 22.4121 18.6676H21.2443C19.8346 18.6676 17.464 18.171 17.4277 14.8617V7.23122C17.4277 5.82531 17.9261 3.46069 21.2443 3.42529H22.4281C23.8382 3.42529 26.2092 3.92197 26.2443 7.23122V14.8617ZM1.25362 21.6644H12.3717V18.1044H3.78565V0.471133H0V18.1044V19.7398L1.25362 21.6644Z" />
+            </svg>
+            <span class="knx-partner-label">Partner</span>
+            <svg class="knx-partner-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17L17 7M17 7H9M17 7V15" />
+            </svg>
+          </a>
+        </div>
+        <ul class="knx-list">
+          <li>
+            <svg viewBox="0 0 24 24">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            <span>Ein Schalter für Licht, Storen und Heizung, ohne drei Apps</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            <span>Szenen für Morgen, Abend, Ferien auf Knopfdruck</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            <span>Dokumentiert übergeben, erweiterbar auch in 10 Jahren</span>
+          </li>
+        </ul>
+        <a href="/dienstleistungen/smart-home" class="btn-secondary" style="margin-top:28px;">Smart Home anfragen</a>
+      </div>
+      <div class="knx-img">
+        <img src="./reference/_AMA7903.jpg"
+          alt="Swisshelp-Techniker bedient Smart Home Touchpanel mit Heizungssteuerung" loading="lazy">
+        <div class="knx-tag">Zertifiziert und programmierbar</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========== WALLBOX =========== -->
+  <section class="wallbox" id="wallbox">
+    <div class="wallbox-inner">
+      <div class="wallbox-img">
+        <img src="./reference/_AMA7785.jpg" alt="Moderne Wallbox-Installation an Betonwand in privater Schweizer Garage"
+          loading="lazy">
+        <div class="wallbox-badge">
+          <span>E-Mobilität</span>Wallbox-Service
+        </div>
+      </div>
+      <div class="wallbox-text" data-reveal>
+        <div class="eyebrow">E-Mobilität · Wallbox-Service</div>
+        <h2>Wallbox für Ihr Elektroauto, planbar, zugelassen, skalierbar.</h2>
+        <p>Wer heute ein Elektroauto fährt, braucht eine Wallbox, die zuverlässig lädt und sauber ins Hausnetz
+          eingebunden ist. Wir nehmen Ihnen die Planung ab, bauen die Ladestation an den richtigen Ort und erledigen die
+          Formalien mit dem Netzbetreiber. Bei Mehrfamilienhäusern klären wir zusätzlich die Lastverteilung, damit die
+          Anlage auch skalieren kann, wenn später weitere Mietparteien ein E-Auto fahren.</p>
+        <ul class="wallbox-usps">
+          <li>
+            <svg viewBox="0 0 24 24">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            <span>Anschlussleistung am Hausanschluss prüfen</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            <span>Kabelweg und Ladeleistung bestimmen</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            <span>Montage und Inbetriebnahme am Tag X</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            <span>Anmeldung beim Netzbetreiber</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            <span>Kantonale Förderbeiträge prüfen wir mit</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            <span>Auch für Mehrfamilienhäuser planbar</span>
+          </li>
+        </ul>
+        <a href="#kontakt" class="btn-primary">Wallbox anfragen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========== TEAM (v21d: nur Eyebrow + H2 + Team-Grid) =========== -->
+  <section class="team" id="team">
+    <div class="team-head" data-reveal>
+      <div class="eyebrow">Die Menschen hinter Swisshelp</div>
+      <h2>Unser Team.</h2>
+    </div>
+    <div class="team-grid">
+      <article class="team-card" data-reveal style="--ri:0">
+        <div class="team-card-img"><img src="./reference/_AMA7642.jpg"
+            alt="Christoph Trachsel, Geschäftsführer Swisshelp Elektro" loading="lazy"></div>
+        <div class="team-card-body">
+          <div class="team-card-name">Christoph Trachsel</div>
+          <div class="team-card-role">Geschäftsführung</div>
+          <p class="team-card-qual">Gründer der Swisshelp Elektro GmbH. Langjährig tätig bei Finanzinstituten, am
+            Flughafen Zürich und im Infrastrukturbereich. Führt Swisshelp Elektro aus Weiningen ZH.</p>
+        </div>
+      </article>
+      <article class="team-card" data-reveal style="--ri:1">
+        <div class="team-card-img"><img src="./reference/_AMA7938.jpg"
+            alt="Mitarbeiterin Swisshelp Elektro, Administration und Kundenbetreuung" loading="lazy"></div>
+        <div class="team-card-body">
+          <div class="team-card-name">Administration</div>
+          <div class="team-card-role">Kundenbetreuung &amp; Disposition</div>
+          <p class="team-card-qual">Koordiniert Anfragen, Termine und die Rechnungsstellung. Oft die erste Stimme am
+            Telefon, wenn Sie bei Swisshelp anrufen.</p>
+        </div>
+      </article>
+      <article class="team-card" data-reveal style="--ri:2">
+        <div class="team-card-img"><img src="./reference/_AMA8120.jpg"
+            alt="Mehmet Kaya, eidg. dipl. Elektroinstallations- und Sicherheitsexperte" loading="lazy"></div>
+        <div class="team-card-body">
+          <div class="team-card-name">Mehmet Kaya</div>
+          <div class="team-card-role">Sicherheitsexperte</div>
+          <p class="team-card-qual">Leiter Qualitätsmanagement und Projekte, eidg. dipl. Elektroinstallations- und
+            Sicherheitsexperte. Verantwortlich für periodische Kontrollen, Sicherheitsnachweise und die fachtechnische
+            Aufsicht.</p>
+        </div>
+      </article>
+      <article class="team-card" data-reveal style="--ri:3">
+        <div class="team-card-img"><img src="./reference/_AMA8034.jpg" alt="Dominic Trachsel, Projektleitung Service"
+            loading="lazy"></div>
+        <div class="team-card-body">
+          <div class="team-card-name">Dominic Trachsel</div>
+          <div class="team-card-role">Projektleitung Service</div>
+          <p class="team-card-qual">Koordiniert das Tagesgeschäft, Servicetermine und den Notdienst. Seit 2024 im
+            Betrieb, zweite Generation Trachsel in der Firma.</p>
+        </div>
+      </article>
+      <article class="team-card" data-reveal style="--ri:4">
+        <div class="team-card-img"><img src="./reference/_AMA8126.jpg" alt="Dennis Trachsel, Swisshelp Elektro"
+            loading="lazy"></div>
+        <div class="team-card-body">
+          <div class="team-card-name">Dennis Trachsel</div>
+          <div class="team-card-role">Service &amp; Montage</div>
+          <p class="team-card-qual">Zweiter Sohn von Christoph Trachsel. Unterstützt Service- und Montageeinsätze im
+            Familienbetrieb und ist fester Teil des Swisshelp-Teams.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- =========== FAQ =========== -->
+  <section class="faq" id="faq">
+    <div class="faq-head" data-reveal>
+      <div class="faq-head-inner">
+        <div class="eyebrow">Häufige Fragen</div>
+        <h2>Was Kunden vor dem ersten Anruf wissen wollen.</h2>
+      </div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-list-inner">
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Wie schnell kommt Swisshelp Elektro im Notfall?
+            <span class="faq-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              <p>Bei einem akuten Notfall sind wir innerhalb von ein bis drei Stunden bei Ihnen. Wir betreiben ein 24/7
+                Pikett für die Region Zürich, Limmattal und Aargau. Rufen Sie an, das Telefon nimmt während Bürozeiten
+                immer eine Person ab. Ausserhalb der Bürozeiten rufen wir Sie spätestens innerhalb einer Stunde zurück,
+                damit Sie wissen, ob wir gleich kommen oder ob die Sache bis zum Morgen Zeit hat.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Was kostet ein Elektriker pro Stunde in Zürich?
+            <span class="faq-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              <p>Schweizer Elektrobetriebe verrechnen üblicherweise zwischen 120 und 150 Franken pro Stunde. Bei
+                Notdienst ausserhalb der Geschäftszeiten kommen Aufschläge dazu. Bei kleinen Aufträgen arbeiten wir nach
+                Stundenaufwand, bei grösseren Projekten erhalten Sie eine detaillierte Festpreis-Offerte. Eine
+                Erstberatung und die Offerte sind immer kostenlos.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Was ist eine periodische Kontrolle und wann brauche ich eine?
+            <span class="faq-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              <p>Die NIV-Kontrolle ist die periodische Sicherheitsprüfung Ihrer Elektroinstallation nach
+                Niederspannungs-Installationsverordnung. In Wohngebäuden wird sie alle 20 Jahre verlangt, in
+                Gewerbebetrieben alle 5 bis 10 Jahre, je nach Nutzung. Sie erhalten einen Brief vom Netzbetreiber, der
+                Sie auffordert, eine Firma mit ESTI-Kontrollberechtigung mit der Kontrolle zu beauftragen. Wir führen
+                die Kontrolle durch, halten allfällige Mängel fest und stellen nach der Behebung den Sicherheitsnachweis
+                (SiNa) aus. Auf Wunsch übernehmen wir auch die Einreichung beim Netzbetreiber.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Installieren Sie auch Wallboxen für E-Autos?
+            <span class="faq-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              <p>Ja, Wallbox-Installationen für Eigenheime und Mehrfamilienhäuser sind ein Schwerpunkt von uns. Wir
+                planen die Anschlussleistung, prüfen die Hausinstallation, montieren die Wallbox und übernehmen die
+                Anmeldung beim Netzbetreiber. Förderbeiträge in einigen Kantonen prüfen wir mit Ihnen ab.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Sind Sie KNX und LOXONE zertifiziert?
+            <span class="faq-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              <p>Ja, wir sind sowohl zertifizierter KNX Partner als auch LOXONE Partner. Das bedeutet: Ihre
+                Smart-Home-Installation wird nach den offiziellen Standards beider Systeme geplant, programmiert und in
+                Betrieb genommen. Die Zertifizierungen verpflichten uns zu jährlicher Weiterbildung. KNX ist ein offenes
+                System mit über 500 Herstellern, LOXONE ein geschlossenes, sehr integriertes System. Welches System für
+                Sie passt, klären wir im Erstgespräch abhängig von Ihrem Budget, Ihren Anforderungen und der bestehenden
+                Installation.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            In welcher Region ist Swisshelp Elektro tätig?
+            <span class="faq-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              <p>Hauptsitz ist Weiningen ZH. Wir arbeiten im Umkreis von 50 Kilometern, das umfasst die Stadt Zürich,
+                das Limmattal, den Kanton Zürich, den Kanton Aargau (Region Baden, Wettingen) und Zug.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Meine Sicherung fliegt ständig raus, was soll ich tun?
+            <span class="faq-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              <p>Das kann an einem defekten Gerät, einer überlasteten Leitung oder einem Isolationsfehler liegen. Ziehen
+                Sie zunächst alle Geräte des betroffenen Stromkreises aus, legen Sie die Sicherung wieder ein und
+                stecken Sie die Geräte einzeln wieder ein, um das defekte Gerät zu identifizieren. Wenn die Sicherung
+                sofort wieder auslöst oder ohne angeschlossenes Gerät nicht hält, rufen Sie uns an. Ein wiederkehrendes
+                Auslösen des Fehlerstrom-Schutzschalters (FI) ist immer ein Grund, die Installation prüfen zu lassen,
+                weil dahinter meist ein Isolationsfehler steckt, der nicht einfach wegwartet.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Bekomme ich vorab eine Kostenschätzung?
+            <span class="faq-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="faq-a">
+            <div class="faq-a-inner">
+              <p>Ja. Für geplante Arbeiten erhalten Sie eine schriftliche Offerte mit Festpreis. Bei Service- und
+                Notdiensteinsätzen nennen wir Ihnen die zu erwartende Grössenordnung am Telefon, sobald der Aufwand
+                einschätzbar ist. Zeigt sich vor Ort, dass mehr Aufwand nötig ist, informieren wir Sie vor der
+                Ausführung und Sie entscheiden. Überraschungen auf der Rechnung gibt es bei uns nicht.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="faq-close">
+      <div class="faq-close-text">Ihre Frage ist noch nicht dabei?<span class="faq-close-sub">Wir beantworten sie direkt
+          am Telefon oder im Anfrageformular.</span></div>
+      <a href="#kontakt" class="faq-close-cta">
+        <span data-scramble>Zum Kontaktformular</span>
+        <svg viewBox="0 0 24 24">
+          <path d="M5 12h14M13 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- =========== BIG CTA =========== -->
+  <section class="big-cta" id="kontakt">
+    <div class="big-cta-bg">
+      <img src="./reference/_AMA8417.jpg" alt="Swisshelp-Logo auf Motorhaube des Firmenwagens" loading="lazy">
+    </div>
+    <div class="big-cta-overlay"></div>
+    <div class="big-cta-inner">
+      <div class="big-cta-text" data-reveal>
+        <div class="eyebrow">Ihr Kontakt</div>
+        <h2>Sprechen wir über Ihr Projekt.</h2>
+        <p class="big-cta-sub">Greifen Sie zum Telefon. Während der Bürozeit nehmen wir direkt ab, ausserhalb erhalten
+          Sie innert 60 Minuten einen Rückruf.</p>
+        <ul class="big-cta-checks">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            <span>In 1 bis 3 Stunden vor Ort</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            <span>24/7 Pikettdienst, ganze Region</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            <span>Feste Ansprechperson, keine Subunternehmen</span>
+          </li>
+        </ul>
+        <a href="tel:+41445400835" class="big-cta-phone-btn">
+          <span class="big-cta-phone-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+          </span>
+          <span class="big-cta-phone-text">
+            <small>Jetzt anrufen</small>
+            <strong>+41 44 540 08 35</strong>
+          </span>
+          <span class="btn-arrow" aria-hidden="true"></span>
+        </a>
+      </div>
+      <form class="funnel" id="funnel-form" onsubmit="event.preventDefault();">
+        <div class="funnel-head">
+          <h3>Service in 30 Sekunden anfragen</h3>
+          <div class="funnel-progress">
+            <div class="funnel-dot active" data-step="1"></div>
+            <div class="funnel-dot" data-step="2"></div>
+            <div class="funnel-dot" data-step="3"></div>
+          </div>
+        </div>
+
+        <div class="funnel-stage" role="region" aria-label="Service-Anfrage Schritt für Schritt" aria-live="polite">
+          <!-- Step 1: Anliegen -->
+          <div class="funnel-step active" data-step="1">
+            <div class="funnel-label">Schritt 1 von 3</div>
+            <div class="funnel-question">Um was geht es?</div>
+            <div class="funnel-options">
+              <button type="button" class="funnel-option" data-value="Notfall">Notfall<small>Sofort-Einsatz
+                  nötig</small></button>
+              <button type="button" class="funnel-option" data-value="Service">Service<small>Defekt,
+                  Reparatur</small></button>
+              <button type="button" class="funnel-option" data-value="Wallbox">Wallbox<small>Ladestation
+                  E-Auto</small></button>
+              <button type="button" class="funnel-option" data-value="Smart Home">Smart Home<small>KNX oder
+                  LOXONE</small></button>
+              <button type="button" class="funnel-option" data-value="NIV-Kontrolle">Periodische
+                Kontrollen<small>Sicherheitsnachweis</small></button>
+              <button type="button" class="funnel-option" data-value="Anderes">Anderes<small>Projekt,
+                  Offerte</small></button>
+            </div>
+          </div>
+
+          <!-- Step 2: Zeit (generisch) -->
+          <div class="funnel-step" data-step="2" data-branch="time">
+            <div class="funnel-label">Schritt 2 von 3</div>
+            <div class="funnel-question" id="q-time">Wann soll es passieren?</div>
+            <div class="funnel-options">
+              <button type="button" class="funnel-option" data-value="So schnell wie möglich">So schnell wie
+                möglich<small>Innerhalb weniger Tage</small></button>
+              <button type="button" class="funnel-option" data-value="Innerhalb 1 Monat">Innerhalb 1
+                Monat<small>Planbar</small></button>
+              <button type="button" class="funnel-option" data-value="Später dieses Jahr">Später dieses
+                Jahr<small>Projekt-Vorbereitung</small></button>
+              <button type="button" class="funnel-option" data-value="Noch unklar">Noch
+                unklar<small>Erstberatung</small></button>
+            </div>
+          </div>
+
+          <!-- Step 2: Notfall-Short (alternative Branch) -->
+          <div class="funnel-step" data-step="2" data-branch="emergency" style="display:none">
+            <div class="funnel-label">Notfall erkannt</div>
+            <div class="funnel-question">Für akute Notfälle: direkt anrufen.</div>
+            <a href="tel:+41445400835" class="funnel-emergency-btn">
+              <span class="big-cta-phone-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+              </span>
+              <span class="big-cta-phone-text">
+                <small>24/7 Notdienst</small>
+                <strong>+41 44 540 08 35</strong>
+              </span>
+            </a>
+            <p class="funnel-hint">Oder beschreiben Sie uns kurz, was passiert ist. Wir rufen binnen 60 Minuten zurück.
+            </p>
+            <div class="funnel-field">
+              <label for="f-emergency-note">Was ist passiert?</label>
+              <textarea id="f-emergency-note" rows="3"
+                placeholder="Sicherung löst aus, kein Strom, FI hält nicht..."></textarea>
+            </div>
+          </div>
+
+          <!-- Step 2: Anderes-Details (alternative Branch) -->
+          <div class="funnel-step" data-step="2" data-branch="other" style="display:none">
+            <div class="funnel-label">Schritt 2 von 3</div>
+            <div class="funnel-question">Was möchten Sie genau?</div>
+            <div class="funnel-field">
+              <label for="f-other-desc">Beschreibung</label>
+              <textarea id="f-other-desc" rows="4" placeholder="Projekt, Offerte, Frage..."></textarea>
+            </div>
+            <div class="funnel-field">
+              <label for="f-other-time">Zeitrahmen (optional)</label>
+              <input type="text" id="f-other-time" placeholder="z.B. nächsten Monat">
+            </div>
+          </div>
+
+          <!-- Step 3: Kontakt -->
+          <div class="funnel-step" data-step="3">
+            <div class="funnel-label">Schritt 3 von 3</div>
+            <div class="funnel-question">Ihre Kontaktdaten</div>
+            <div class="funnel-fields">
+              <div class="funnel-field">
+                <label for="f-name">Name</label>
+                <input type="text" id="f-name" required>
+              </div>
+              <div class="funnel-field">
+                <label for="f-tel">Telefon</label>
+                <input type="tel" id="f-tel" required>
+              </div>
+              <div class="funnel-field">
+                <label for="f-note">Kurze Beschreibung (optional)</label>
+                <textarea id="f-note" rows="3" placeholder="Zusätzliche Infos?"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4: Done -->
+          <div class="funnel-done" data-step="4">
+            <div class="funnel-done-check">OK</div>
+            <h3>Anfrage ist bei uns.</h3>
+            <p>Wir melden uns unter der angegebenen Nummer. Bei akutem Notfall rufen Sie direkt an: <strong>044 540 08
+                35</strong>.</p>
+          </div>
+        </div>
+
+        <div class="funnel-nav" id="funnel-nav">
+          <button type="button" class="funnel-back" id="funnel-back" disabled>Zurück</button>
+          <button type="button" class="funnel-next" id="funnel-next">Weiter</button>
+          <button type="submit" class="funnel-submit" id="funnel-submit" style="display:none">Anfrage senden</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- =========== FOOTER =========== -->
+  <!-- Partner-Strip (Autoritäts-Anker) -->
+  <section class="footer-partners" aria-label="Zertifizierungen und Partner">
+    <div class="footer-partners-inner">
+      <div class="footer-partners-label">Zertifizierte Partnerschaften</div>
+      <div class="footer-partners-logos">
+        <span class="footer-partner-chip">KNX <em>Certified Partner</em></span>
+        <span class="footer-partner-chip">LOXONE <em>Silver Partner</em></span>
+        <span class="footer-partner-chip">NIV <em>Eidg. dipl. Sicherheitsexperte</em></span>
+        <span class="footer-partner-chip">24/7 <em>Pikett ZH · Limmattal · AG</em></span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#top" class="nav-logo" aria-label="swisshelp"><img src="./images/favicon.svg" alt="swisshelp"></a>
+        <p>Elektriker und Elektro-Notdienst für Zürich, Limmattal und Aargau. Familienbetrieb in Weiningen. KNX und
+          LOXONE Partner, eidg. dipl. Sicherheitsexperte im Team.</p>
+        <a href="tel:+41445400835" class="nav-phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+          <span>+41 44 540 08 35</span>
+        </a>
+      </div>
+      <div class="footer-col">
+        <h4>Leistungen</h4>
+        <ul>
+          <li><a href="/dienstleistungen/service-und-reparatur">Elektro-Notdienst</a></li>
+          <li><a href="/dienstleistungen/service-und-reparatur">Service &amp; Reparatur</a></li>
+          <li><a href="/dienstleistungen/elektroinstallationen">Installation</a></li>
+          <li><a href="/dienstleistungen/periodische-kontrollen">Periodische Kontrollen</a></li>
+          <li><a href="/dienstleistungen/e-mobilitaet-und-ladestationen">Wallbox</a></li>
+          <li><a href="/dienstleistungen/smart-home">KNX, LOXONE</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Unternehmen</h4>
+        <ul>
+          <li><a href="/ueber-uns">Über uns</a></li>
+          <li><a href="/#team">Team</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+          <li><a href="/kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Standort</h4>
+        <address>
+          Swisshelp Elektro GmbH<br>
+          Grossächerweg 4<br>
+          8104 Weiningen ZH<br><br>
+          <a href="tel:+41445400835">+41 44 540 08 35</a>
+          <a href="mailto:ch.trachsel@swisshelp.info">ch.trachsel@swisshelp.info</a>
+          <br>Mo-Fr 07:30-17:30<br>Notdienst 7x24
+        </address>
+      </div>
+    </div>
+    <div class="footer-service-area">
+      <div class="footer-service-area-inner">
+        <span class="footer-service-label">Einsatzgebiet</span>
+        <span class="footer-service-list">Weiningen · Dietikon · Schlieren · Urdorf · Zürich · Regensdorf · Affoltern a.
+          A. · Baden · Wettingen · Zug · gesamter Kanton Zürich und Limmattal</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Swisshelp Elektro GmbH &nbsp;·&nbsp; UID CHE-393.108.974 &nbsp;·&nbsp; Mitglied VSEI
+        &nbsp;·&nbsp; <a href="https://make-marketing.agency" target="_blank" rel="noopener"
+          style="color:inherit;opacity:0.6">Webdesign Aesch, MAKE Marketing</a></div>
+      <div>
+        <a href="/impressum.html">Impressum</a>
+        &nbsp;&nbsp;
+        <a href="/datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Phone Button (Mobile) -->
+  <a href="tel:+41445400835" class="float-phone" aria-label="Jetzt anrufen">
+    <svg viewBox="0 0 24 24">
+      <path
+        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+    </svg>
+  </a>
+
+  <!-- v28: Page-Load Animation Trigger -->
+  <script>
+    (function () {
+      /* double rAF: sicherstellt dass Browser schon gerendert hat bevor Animation startet */
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          document.body.classList.add('page-loaded');
+        });
+      });
+    })();
+  </script>
+
+  <!-- FAQ Toggle JS -->
+  <script>
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const open = item.classList.contains('open');
+        item.classList.toggle('open');
+        btn.setAttribute('aria-expanded', !open);
+      });
+    });
+
+    // Floating-Phone ausblenden wenn Kontakt-Section sichtbar
+    (function () {
+      const fp = document.querySelector('.float-phone');
+      const target = document.getElementById('kontakt');
+      if (!fp || !target || !('IntersectionObserver' in window)) return;
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            fp.style.opacity = '0';
+            fp.style.pointerEvents = 'none';
+          } else {
+            fp.style.opacity = '';
+            fp.style.pointerEvents = '';
+          }
+        });
+      }, { threshold: 0.18 });
+      io.observe(target);
+      fp.style.transition = 'opacity .3s, background .2s, transform .2s';
+    })();
+
+    // Funnel Logic mit Branch-Logik je Anliegen
+    (function () {
+      const form = document.getElementById('funnel-form');
+      if (!form) return;
+      const dots = form.querySelectorAll('.funnel-dot');
+      const doneEl = form.querySelector('.funnel-done');
+      const nav = document.getElementById('funnel-nav');
+      const backBtn = document.getElementById('funnel-back');
+      const nextBtn = document.getElementById('funnel-next');
+      const submitBtn = document.getElementById('funnel-submit');
+      const qTime = document.getElementById('q-time');
+
+      let current = 1;
+      let branch = 'time'; // time | emergency | other
+      const data = { anliegen: '', wann: '', name: '', tel: '', note: '' };
+
+      // Branch-Logik: welche Step-2 Frage für welches Anliegen
+      const branchFor = {
+        'Notfall': 'emergency',
+        'Service': 'time',
+        'Wallbox': 'time',
+        'Smart Home': 'time',
+        'NIV-Kontrolle': 'time',
+        'Anderes': 'other'
+      };
+      const timeQuestion = {
+        'Service': 'Wann soll der Service stattfinden?',
+        'Wallbox': 'Wann soll die Wallbox installiert werden?',
+        'Smart Home': 'Wann soll das Smart Home umgesetzt werden?',
+        'NIV-Kontrolle': 'Wann brauchen Sie den Sicherheitsnachweis?'
+      };
+
+      // Step-1 Options
+      form.querySelectorAll('.funnel-step[data-step="1"] .funnel-option').forEach(opt => {
+        opt.addEventListener('click', () => {
+          form.querySelectorAll('.funnel-step[data-step="1"] .funnel-option').forEach(o => o.classList.remove('selected'));
+          opt.classList.add('selected');
+          data.anliegen = opt.dataset.value;
+          branch = branchFor[data.anliegen] || 'time';
+          if (branch === 'time' && timeQuestion[data.anliegen] && qTime) {
+            qTime.textContent = timeQuestion[data.anliegen];
+          }
+          setTimeout(() => goTo(2), 200);
+        });
+      });
+
+      // Step-2 Time-Branch Options
+      form.querySelectorAll('.funnel-step[data-branch="time"] .funnel-option').forEach(opt => {
+        opt.addEventListener('click', () => {
+          form.querySelectorAll('.funnel-step[data-branch="time"] .funnel-option').forEach(o => o.classList.remove('selected'));
+          opt.classList.add('selected');
+          data.wann = opt.dataset.value;
+          setTimeout(() => goTo(3), 200);
+        });
+      });
+
+      function showStep(n) {
+        const allSteps = form.querySelectorAll('.funnel-step, .funnel-done');
+        allSteps.forEach(s => {
+          const step = parseInt(s.dataset.step);
+          const stepBranch = s.dataset.branch;
+          const isMatch = step === n && (!stepBranch || stepBranch === branch || step !== 2);
+          const active = step === n && (step !== 2 || !stepBranch || stepBranch === branch);
+          s.classList.remove('active', 'leaving-left');
+          if (step === n) {
+            if (step === 2) {
+              // Nur die passende Branch aktivieren, andere ausblenden
+              if (stepBranch === branch) {
+                s.style.display = '';
+                requestAnimationFrame(() => s.classList.add('active'));
+              } else {
+                s.style.display = 'none';
+              }
+            } else {
+              s.style.display = '';
+              requestAnimationFrame(() => s.classList.add('active'));
+            }
+          } else {
+            // Inactive: display zurücksetzen für Step-2-Branches
+            if (step === 2 && stepBranch) {
+              s.style.display = stepBranch === branch ? '' : 'none';
+            }
+          }
+        });
+      }
+
+      function goTo(n) {
+        current = n;
+        dots.forEach(d => d.classList.toggle('active', parseInt(d.dataset.step) <= n));
+        backBtn.disabled = n === 1;
+
+        if (n === 3) {
+          nextBtn.style.display = 'none';
+          submitBtn.style.display = 'inline-flex';
+        } else {
+          nextBtn.style.display = 'inline-flex';
+          submitBtn.style.display = 'none';
+        }
+
+        showStep(n);
+      }
+
+      nextBtn.addEventListener('click', () => {
+        if (current === 1 && !data.anliegen) return;
+        if (current === 2 && branch === 'time' && !data.wann) return;
+        if (current < 3) goTo(current + 1);
+      });
+      backBtn.addEventListener('click', () => { if (current > 1) goTo(current - 1); });
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        data.name = document.getElementById('f-name').value.trim();
+        data.tel = document.getElementById('f-tel').value.trim();
+        data.note = document.getElementById('f-note').value.trim();
+        if (!data.name || !data.tel) return;
+        const allSteps = form.querySelectorAll('.funnel-step');
+        allSteps.forEach(s => s.classList.remove('active'));
+        doneEl.classList.add('active');
+        nav.style.display = 'none';
+      });
+    })();
+  </script>
+
+  <!-- ============ SCHEMA.ORG ============ -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Electrician",
+  "@id": "https://swisshelp.info/#business",
+  "name": "Swisshelp Elektro GmbH",
+  "alternateName": "Swisshelp Elektro",
+  "image": "https://swisshelp.info/og-image.jpg",
+  "logo": "https://swisshelp.info/logo.svg",
+  "url": "https://swisshelp.info",
+  "telephone": "+41445400835",
+  "email": "ch.trachsel@swisshelp.info",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Grossächerweg 4",
+    "addressLocality": "Weiningen",
+    "addressRegion": "ZH",
+    "postalCode": "8104",
+    "addressCountry": "CH"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "47.4225",
+    "longitude": "8.4392"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Zürich" },
+    { "@type": "City", "name": "Weiningen" },
+    { "@type": "City", "name": "Dietikon" },
+    { "@type": "City", "name": "Schlieren" },
+    { "@type": "City", "name": "Baden" },
+    { "@type": "City", "name": "Zug" },
+    { "@type": "AdministrativeArea", "name": "Limmattal" },
+    { "@type": "AdministrativeArea", "name": "Kanton Zürich" },
+    { "@type": "AdministrativeArea", "name": "Kanton Aargau" }
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "07:30",
+      "closes": "17:30"
+    }
+  ],
+  "priceRange": "$$",
+  "foundingDate": "2020-10-02",
+  "founder": { "@type": "Person", "name": "Christoph Trachsel" },
+  "employee": [
+    { "@type": "Person", "name": "Christoph Trachsel", "jobTitle": "Geschäftsleitung" },
+    { "@type": "Person", "name": "Dominic Trachsel", "jobTitle": "Projektleitung Service" },
+    { "@type": "Person", "name": "Dennis Trachsel", "jobTitle": "Service und Montage" },
+    { "@type": "Person", "name": "Mehmet Kaya", "jobTitle": "Eidg. Dipl. Elektroinstallations- und Sicherheitsexperte" }
+  ],
+  "knowsAbout": [
+    "Elektroinstallationen",
+    "Elektro-Notdienst",
+    "NIV-Kontrolle",
+    "Sicherheitsnachweis",
+    "Wallbox Installation",
+    "KNX Gebäudeautomation",
+    "LOXONE Smart Home",
+    "Schwachstrom",
+    "Lichtplanung",
+    "Photovoltaik Anschluss"
+  ],
+  "hasCredential": [
+    { "@type": "EducationalOccupationalCredential", "credentialCategory": "KNX zertifizierter Partner" },
+    { "@type": "EducationalOccupationalCredential", "credentialCategory": "LOXONE Partner" },
+    { "@type": "EducationalOccupationalCredential", "credentialCategory": "Eidg. Dipl. Elektroinstallations- und Sicherheitsexperte" }
+  ],
+  "sameAs": [
+    "https://www.search.ch/zuerich/swisshelp-elektro-gmbh",
+    "https://www.local.ch/de/d/weiningen-zh/8104/elektriker/swisshelp-elektro-gmbh"
+  ]
+}
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://swisshelp.info/#org",
+  "name": "Swisshelp Elektro GmbH",
+  "url": "https://swisshelp.info",
+  "logo": "https://swisshelp.info/logo.svg",
+  "telephone": "+41445400835",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Grossächerweg 4",
+    "addressLocality": "Weiningen",
+    "postalCode": "8104",
+    "addressCountry": "CH"
+  }
+}
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wie schnell kommt Swisshelp Elektro im Notfall?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bei einem akuten Notfall sind wir innerhalb von ein bis drei Stunden bei Ihnen. Wir betreiben ein 7x24h Pikett für die Region Zürich, Limmattal und Aargau. Rufen Sie an, das Telefon nimmt während Bürozeiten immer eine Person ab. Ausserhalb der Bürozeiten rufen wir Sie spätestens innerhalb einer Stunde zurück."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was kostet ein Elektriker pro Stunde in Zürich?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Schweizer Elektrobetriebe verrechnen üblicherweise zwischen 120 und 150 Franken pro Stunde. Bei Notdienst ausserhalb der Geschäftszeiten kommen Aufschläge dazu. Bei kleinen Aufträgen arbeiten wir nach Stundenaufwand, bei grösseren Projekten erhalten Sie eine detaillierte Festpreis-Offerte. Eine Erstberatung und die Offerte sind immer kostenlos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist eine periodische Kontrolle und wann brauche ich eine?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die NIV-Kontrolle ist die periodische Sicherheitsprüfung Ihrer Elektroinstallation nach Niederspannungs-Installationsverordnung. In Wohngebäuden alle 20 Jahre, in Gewerbebetrieben alle 5 bis 10 Jahre. Sie erhalten einen Brief vom Netzbetreiber, der Sie auffordert. Wir führen die Kontrolle durch und stellen den Sicherheitsnachweis (SiNa) aus."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Installieren Sie auch Wallboxen für E-Autos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, Wallbox-Installationen für Eigenheime und Mehrfamilienhäuser sind ein Schwerpunkt von uns. Wir planen die Anschlussleistung, prüfen die Hausinstallation, montieren die Wallbox und übernehmen die Anmeldung beim Netzbetreiber. Förderbeiträge in einigen Kantonen prüfen wir mit Ihnen ab."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sind Sie KNX und LOXONE zertifiziert?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, wir sind sowohl zertifizierter KNX Partner als auch LOXONE Partner. Das bedeutet: Ihre Smart-Home-Installation wird nach den offiziellen Standards beider Systeme geplant, programmiert und in Betrieb genommen. Die Zertifizierungen verpflichten uns zu jährlicher Weiterbildung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "In welcher Region ist Swisshelp Elektro tätig?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hauptsitz ist Weiningen ZH. Wir arbeiten im Umkreis von 50 km, das umfasst die Stadt Zürich, das Limmattal, den Kanton Zürich, den Kanton Aargau (Region Baden, Wettingen) und Zug."
+      }
+    }
+  ]
+}
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Elektroinstallationen und Gesamtkonzepte für moderne Elektrotechnik",
+  "provider": { "@id": "https://swisshelp.info/#business" },
+  "areaServed": { "@type": "AdministrativeArea", "name": "Kanton Zürich" },
+  "description": "Massgeschneiderte Elektrotechnik vom Familienbetrieb aus Weiningen ZH: Elektroinstallationen, Service und Reparatur, Smart Home, Ladestationen und periodische Kontrollen für Zürich, Limmattal und Aargau."
+}
+</script>
+
+  <script>
+    (function () {
+      var burger = document.getElementById('nav-burger');
+      var menu = document.getElementById('nav-mobile');
+      if (!burger || !menu) return;
+      function close() {
+        menu.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+      function open() {
+        menu.classList.add('open');
+        burger.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+      burger.addEventListener('click', function () {
+        burger.getAttribute('aria-expanded') === 'true' ? close() : open();
+      });
+      menu.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', close);
+      });
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 900) close();
+      });
+      window.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') close();
+      });
+    })();
+  </script>
+
+
+  <script>
+    // Bento-Reveal v31g: BULK-REVEAL pro Section (User 2026-04-28).
+    // Frueher: per-Card-Stagger (idx % 2 * 180ms) — User: "abgehackt, weisser Strich".
+    // Jetzt: Sobald EINE bento-card sichtbar wird, bekommen ALLE bento-cards der gleichen
+    // Section gleichzeitig .is-in. Plus negativer rootMargin damit Trigger frueher feuert
+    // (kein "weisser Strich" mehr beim Runterscrollen).
+    document.addEventListener("DOMContentLoaded", function () {
+      var cards = document.querySelectorAll(".bento-card");
+      if (!cards.length) return;
+
+      // Gruppiere Cards nach gemeinsamem Section-Container (.bento-grid oder naechster section).
+      function sectionOf(el) {
+        return el.closest(".bento-grid") || el.closest("section") || el.parentElement;
+      }
+      var sections = new Map();
+      cards.forEach(function (c) {
+        var sec = sectionOf(c);
+        if (!sections.has(sec)) sections.set(sec, []);
+        sections.get(sec).push(c);
+      });
+
+      // Pro Section ein Sentinel beobachten — wenn der Sentinel sichtbar wird,
+      // alle Cards der Section gleichzeitig auf .is-in setzen.
+      // Cleanup-Status (v31-runde-3-MIKRO Re-Check 2026-04-28): unobserve(sec) feuert nach
+      // erstem Hit — Section wird nicht weiter beobachtet. Cards werden eh nicht observiert
+      // (nur der Section-Sentinel), daher kein Memory-Leak. ✅
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            var groupCards = sections.get(e.target);
+            if (groupCards) {
+              groupCards.forEach(function (c) { c.classList.add("is-in"); });
+            }
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.05, rootMargin: "0px 0px -8% 0px" });
+
+      sections.forEach(function (_groupCards, sec) { io.observe(sec); });
+    });
+
+    // === v29 ANIMATION SUITE ===
+    // Word-Reveal Headlines, Char-Typewriter Eyebrows, smooth Counter.
+    // Loest die alte Mega-Stats-Scramble-Logik ab und faehrt smoother + langsamer.
+    (function () {
+      var SCRAMBLE_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+      var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var IS_MOBILE = function () { return window.matchMedia('(max-width: 760px)').matches; };
+
+      /* ----- Helpers: Text -> Wort-Spans ----- */
+      function splitWords(el) {
+        if (!el || el.dataset.wordsApplied === "1") return;
+        el.dataset.wordsApplied = "1";
+        if (!el.hasAttribute("data-words")) el.setAttribute("data-words", "");
+        var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+        var textNodes = [];
+        var n;
+        while ((n = walker.nextNode())) textNodes.push(n);
+        var wi = 0;
+        textNodes.forEach(function (tn) {
+          var text = tn.textContent;
+          if (!text || !text.trim()) return;
+          var frag = document.createDocumentFragment();
+          var tokens = text.split(/(\s+)/);
+          tokens.forEach(function (token) {
+            if (!token) return;
+            if (/^\s+$/.test(token)) {
+              frag.appendChild(document.createTextNode(token));
+            } else {
+              var span = document.createElement("span");
+              span.className = "word";
+              span.style.setProperty("--wi", wi);
+              wi++;
+              var inner = document.createElement("span");
+              inner.className = "word-inner";
+              inner.textContent = token;
+              span.appendChild(inner);
+              frag.appendChild(span);
+            }
+          });
+          tn.parentNode.replaceChild(frag, tn);
+        });
+      }
+
+      /* ----- Helpers: Eyebrow markieren fuer Scramble-Reveal.
+              Setzt nur das data-chars Attribut (fuer CSS-Fade) — der eigentliche
+              Letter-Roll passiert per scrambleTextNodes() in triggerReveal(),
+              analog zur KNX/NIV-Mega-Stat-Animation. ----- */
+      function markEyebrow(el) {
+        if (!el || el.dataset.charsApplied === "1") return;
+        el.dataset.charsApplied = "1";
+        if (!el.hasAttribute("data-chars")) el.setAttribute("data-chars", "");
+        // Original-Text in einer "Lock"-Phase festhalten, damit der Scramble
+        // beim ersten Sichtbar-Werden mit garantiert korrekter Quelle laeuft —
+        // auch wenn anderes JS dazwischen mit textContent spielt.
+        var orig = "";
+        el.childNodes.forEach(function (n) {
+          if (n.nodeType === 3) orig += n.textContent;
+          else if (n.nodeType === 1) orig += n.textContent;
+        });
+        el.dataset.charsOrig = orig;
+      }
+
+      /* ----- Eyebrow-Scramble triggern (idempotent). ----- */
+      function scrambleEyebrow(el) {
+        if (!el || el.dataset.charsScrambled === "1") return;
+        el.dataset.charsScrambled = "1";
+        if (REDUCED) return;
+        scrambleTextNodes(el, 1100);
+      }
+
+      /* ----- Smooth Counter mit easeOutCubic, optionalem Startwert ----- */
+      function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+      function countTextNode(textNode, target, duration, startVal) {
+        if (REDUCED) { textNode.textContent = target; return; }
+        var from = (typeof startVal === "number" && !isNaN(startVal)) ? startVal : 0;
+        var span = target - from;
+        var start = performance.now();
+        function step(now) {
+          var p = Math.min((now - start) / duration, 1);
+          var v = Math.floor(from + easeOutCubic(p) * span);
+          textNode.textContent = v;
+          if (p < 1) requestAnimationFrame(step);
+          else textNode.textContent = target;
+        }
+        requestAnimationFrame(step);
+      }
+
+      /* ----- Mega-Stat-Animation: Counter wenn reine Zahl, sonst sanftes Char-Reveal.
+              v32 Idempotenz: dataset.megaAnimated verhindert Re-Trigger durch Mehrfach-
+              Intersection (v31-runde-3-MIKRO Bug: Mid-Frame-Glitch in Mega-Stats). ----- */
+      function animateMegaStat(el, delay) {
+        if (el.dataset.megaAnimated === "1") return;
+        el.dataset.megaAnimated = "1";
+        setTimeout(function () {
+          el.classList.add("is-in");
+          var numEl = el.querySelector(".mega-stat-num");
+          if (!numEl) return;
+          var firstTextNode = null;
+          var firstText = "";
+          for (var i = 0; i < numEl.childNodes.length; i++) {
+            var n = numEl.childNodes[i];
+            if (n.nodeType === 3 && n.textContent.trim()) {
+              firstTextNode = n;
+              firstText = n.textContent.trim();
+              break;
+            }
+          }
+          var asNum = parseInt(firstText, 10);
+          if (firstTextNode && !isNaN(asNum) && /^\d+$/.test(firstText)) {
+            countTextNode(firstTextNode, asNum, 1500);
+          } else {
+            // Nicht-numerisch wie "KNX", "NIV" — sanfter Scramble.
+            scrambleTextNodes(numEl, 1200);
+          }
+        }, delay);
+      }
+
+      /* ----- scrambleTextNodes: char-roll bis Klartext.
+              v32 Bug-Fix (v31-runde-3-MIKRO 2026-04-28): Glitch-Reste in Mega-Stats /
+              Ablauf-Eyebrow / FAQ-Eyebrow entstanden, weil Re-Trigger waehrend laufendem
+              Tick die scrambled-Version als "original" einlas. Vier Schichten:
+              1. dataset.scrambled === "done" → harter Skip (Re-Intersection no-op).
+              2. el.__scrambleTick clearen falls noch laufend → kein Doppel-Schreiben.
+              3. el.__scrambleParts cachen → Re-Trigger nutzt gecachtes Original aus
+                 erstem Aufruf, nie potenziell korrupten n.textContent.
+              4. Final immer p.node.textContent = p.original + dataset markieren. ----- */
+      function scrambleTextNodes(el, duration) {
+        if (REDUCED) return;
+        if (el.dataset.scrambled === "done") return;
+
+        if (el.__scrambleTick) {
+          clearInterval(el.__scrambleTick);
+          el.__scrambleTick = null;
+        }
+
+        var parts = el.__scrambleParts;
+        if (!parts) {
+          parts = [];
+          el.childNodes.forEach(function (n) {
+            if (n.nodeType === 3 && n.textContent.trim()) parts.push({ node: n, original: n.textContent });
+            else if (n.nodeName === "EM") parts.push({ node: n, original: n.textContent });
+          });
+          el.__scrambleParts = parts;
+        }
+        if (!parts.length) { el.dataset.scrambled = "done"; return; }
+
+        var start = Date.now();
+        var tick = setInterval(function () {
+          var elapsed = Date.now() - start;
+          var progress = Math.min(elapsed / duration, 1);
+          parts.forEach(function (p) {
+            var revealLen = Math.floor(p.original.length * progress);
+            p.node.textContent = p.original.split("").map(function (ch, i) {
+              if (i < revealLen) return p.original[i];
+              if (/[^A-Za-z0-9]/.test(ch)) return ch;
+              return SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)];
+            }).join("");
+          });
+          if (progress >= 1) {
+            clearInterval(tick);
+            parts.forEach(function (p) { p.node.textContent = p.original; });
+            el.dataset.scrambled = "done";
+            el.__scrambleTick = null;
+          }
+        }, 70);
+        el.__scrambleTick = tick;
+      }
+
+      /* ----- Counter "400+" (about-us-proof-num).
+              Startet bei target * 0.875 (z.B. 350 fuer 400) — damit nicht von 0
+              hochgezaehlt wird, sondern realistisch ein "live update"-Gefuehl
+              entsteht. ----- */
+      function animateProofCounter(el) {
+        if (el.dataset.counted === "1") return;
+        el.dataset.counted = "1";
+        var firstTextNode = null;
+        for (var i = 0; i < el.childNodes.length; i++) {
+          if (el.childNodes[i].nodeType === 3 && el.childNodes[i].textContent.trim()) {
+            firstTextNode = el.childNodes[i];
+            break;
+          }
+        }
+        if (!firstTextNode) return;
+        var target = parseInt(firstTextNode.textContent.replace(/\D/g, ""), 10);
+        if (isNaN(target)) return;
+        var startVal = Math.round(target * 0.875);
+        firstTextNode.textContent = startVal;
+        countTextNode(firstTextNode, target, 2200, startVal);
+      }
+
+      /* ----- Bild-Reveal Setup: Container kriegen data-img-reveal,
+              Observer toggelt is-visible. ----- */
+      function setupImgReveals() {
+        /* v31: .bento-card-img bewusst RAUS — die Leistungen-Section behaelt
+           ihren Original-Look (kein Mask-Wipe), die anderen Bilder bekommen
+           weiterhin das Vorhang-Reveal. */
+        var IMG_SELECTORS = [
+          ".ablauf-step-img",
+          ".knx-img",
+          ".wallbox-img",
+          ".about-img",
+          ".about-us-img-full",
+          ".team-photo-full",
+          ".team-card-img",
+          ".big-cta-bg",
+          ".knx-partner-logo-img"
+        ];
+        var nodes = document.querySelectorAll(IMG_SELECTORS.join(","));
+        if (!nodes.length) return;
+        nodes.forEach(function (n) {
+          if (!n.querySelector("img") && !n.querySelector("picture")) return;
+          n.setAttribute("data-img-reveal", "");
+        });
+        if (REDUCED || !("IntersectionObserver" in window)) {
+          nodes.forEach(function (n) { n.classList.add("is-visible"); });
+          return;
+        }
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add("is-visible");
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+        nodes.forEach(function (n) { io.observe(n); });
+      }
+
+      /* ----- Universaler Reveal-Trigger ----- */
+      function triggerReveal(target) {
+        target.classList.add("is-visible");
+
+        // Innen sitzende data-words / data-chars / Counter mitziehen
+        target.querySelectorAll("[data-words]").forEach(function (w) { w.classList.add("is-visible"); });
+        target.querySelectorAll("[data-chars]").forEach(function (c) {
+          c.classList.add("is-visible");
+          scrambleEyebrow(c);
+        });
+        target.querySelectorAll(".about-us-proof-num").forEach(function (c) { animateProofCounter(c); });
+
+        // Falls target selbst data-words / data-chars / proof-num ist
+        if (target.matches("[data-words]")) target.classList.add("is-visible");
+        if (target.matches("[data-chars]")) {
+          target.classList.add("is-visible");
+          scrambleEyebrow(target);
+        }
+        if (target.matches(".about-us-proof-num")) animateProofCounter(target);
+      }
+
+      /* ----- Setup beim DOMContentLoaded ----- */
+      document.addEventListener("DOMContentLoaded", function () {
+        /* 1. Headlines auf Word-Reveal umstellen.
+              Hero-h1, alle h2 in [data-reveal] Containern, diag-break h2, big-cta h2 etc. */
+        var wordTargets = document.querySelectorAll(
+          ".hero h1, " +
+          "[data-reveal] h1, [data-reveal] h2, " +
+          ".diag-break h2, .big-cta h2"
+        );
+        wordTargets.forEach(splitWords);
+
+        /* 2. Eyebrows auf Scramble-Reveal vorbereiten (data-chars markieren). */
+        var charTargets = document.querySelectorAll(".hero-eyebrow, .eyebrow, .diag-break-eyebrow");
+        charTargets.forEach(markEyebrow);
+
+        /* 3. Bild-Reveal-Mask aufsetzen */
+        setupImgReveals();
+
+        /* 4. Hero direkt triggern (above the fold, kein Observer noetig) */
+        var heroEyebrow = document.querySelector(".hero-eyebrow");
+        var heroH1 = document.querySelector(".hero h1");
+        if (heroEyebrow) {
+          setTimeout(function () {
+            heroEyebrow.classList.add("is-visible");
+            scrambleEyebrow(heroEyebrow);
+          }, 180);
+        }
+        if (heroH1) {
+          setTimeout(function () { heroH1.classList.add("is-visible"); }, 380);
+        }
+
+        /* 5. Mega-Stats — IntersectionObserver, gestaffelter Counter */
+        var stats = document.querySelectorAll(".mega-stat");
+        if (stats.length) {
+          var statsObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                // v31g: Bulk-Reveal — alle Mega-Stats gleichzeitig, nicht mehr i*130 Stagger
+                // (User-Bug: "abgehackt, nacheinander reingeht"). Counter-Animation variiert
+                // natuerlich durch unterschiedliche Zahlen-Laengen, kein Extra-Stagger noetig.
+                stats.forEach(function (el) { animateMegaStat(el, 0); });
+                statsObs.disconnect();
+              }
+            });
+          }, { threshold: 0.32 });
+          statsObs.observe(stats[0]);
+        }
+      });
+
+      // Globale API fuer den Reveal-Observer weiter unten
+      window.__swhTriggerReveal = triggerReveal;
+    })();
+
+    // v19d: Text-Scramble-Hover (Zahlenschloss-Effekt) auf markierten Links.
+    // Scramblet nur den ersten TextNode des Elements — Icons/Spans bleiben intakt.
+    document.addEventListener("DOMContentLoaded", function () {
+      var scrambleChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      document.querySelectorAll("[data-scramble]").forEach(function (el) {
+        var textNode = null;
+        for (var i = 0; i < el.childNodes.length; i++) {
+          if (el.childNodes[i].nodeType === 3 && el.childNodes[i].textContent.trim()) {
+            textNode = el.childNodes[i];
+            break;
+          }
+        }
+        if (!textNode) return;
+        var original = textNode.textContent;
+        var scrambling = false;
+        el.addEventListener("mouseenter", function () {
+          if (scrambling) return;
+          scrambling = true;
+          var iteration = 0;
+          var interval = setInterval(function () {
+            textNode.textContent = original.split("").map(function (ch, idx) {
+              if (idx < iteration) return original[idx];
+              if (ch === " " || /[·\-—\/()\.,]/.test(ch)) return ch;
+              return scrambleChars[Math.floor(Math.random() * scrambleChars.length)];
+            }).join("");
+            iteration += 0.5;
+            if (iteration >= original.length + 1) {
+              clearInterval(interval);
+              textNode.textContent = original;
+              scrambling = false;
+            }
+          }, 38);
+        });
+      });
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+      var slider = document.getElementById("ablauf-slider");
+      if (!slider) return;
+      var steps = slider.querySelectorAll(".ablauf-step");
+      var segs = document.querySelectorAll(".ablauf-progress-top .ablauf-progress-seg");
+      var counter = document.getElementById("ablauf-current");
+      var prevBtn = document.querySelector('.ablauf-nav-btn[data-dir="prev"]');
+      var nextBtn = document.querySelector('.ablauf-nav-btn[data-dir="next"]');
+      if (steps.length === 0) return;
+      var current = 0;
+      var INTERVAL = 5500;
+
+      /* Setzt CSS-Variablen fuer Richtung (vor→rechts, zurueck→links) */
+      function setDir(dir) {
+        if (dir === "prev") {
+          slider.style.setProperty("--ablauf-enter-from", "-100%");
+          slider.style.setProperty("--ablauf-exit-to", "100%");
+        } else {
+          slider.style.setProperty("--ablauf-enter-from", "100%");
+          slider.style.setProperty("--ablauf-exit-to", "-100%");
+        }
+      }
+
+      function goto(next, dir) {
+        next = ((next % steps.length) + steps.length) % steps.length;
+        if (next === current) return;
+        setDir(dir || "next");
+        for (var i = 0; i < steps.length; i++) {
+          steps[i].classList.remove("is-active", "is-leaving");
+        }
+        steps[current].classList.add("is-leaving");
+        void steps[next].offsetWidth;
+        steps[next].classList.add("is-active");
+        for (var j = 0; j < segs.length; j++) {
+          segs[j].classList.remove("is-active", "is-done");
+          if (j < next) segs[j].classList.add("is-done");
+        }
+        if (counter) counter.textContent = (next + 1 < 10 ? "0" : "") + (next + 1);
+        /* Restart ::after animation cleanly: remove → reflow → re-add */
+        if (segs[next]) {
+          void segs[next].offsetWidth;
+          segs[next].classList.add("is-active");
+        }
+        current = next;
+      }
+
+      var timer = setInterval(function () { goto(current + 1, "next"); }, INTERVAL);
+      function reset() { clearInterval(timer); timer = setInterval(function () { goto(current + 1, "next"); }, INTERVAL); }
+
+      if (nextBtn) nextBtn.addEventListener("click", function () { goto(current + 1, "next"); reset(); });
+      if (prevBtn) prevBtn.addEventListener("click", function () { goto(current - 1, "prev"); reset(); });
+
+      window.addEventListener("keydown", function (e) {
+        var rect = slider.getBoundingClientRect();
+        var inView = rect.top < window.innerHeight * 0.6 && rect.bottom > window.innerHeight * 0.2;
+        if (!inView) return;
+        if (e.key === "ArrowLeft") { goto(current - 1, "prev"); reset(); }
+        if (e.key === "ArrowRight") { goto(current + 1, "next"); reset(); }
+      });
+    });
+
+    // === SCROLL REVEAL (v29) ===
+    // Nutzt den Universal-Trigger aus der Animation-Suite — propagiert is-visible
+    // auch auf interne data-words / data-chars / about-us-proof-num.
+    document.addEventListener("DOMContentLoaded", function () {
+      var trigger = window.__swhTriggerReveal || function (el) { el.classList.add("is-visible"); };
+      // Gesammelte Targets: data-reveal Container + standalone Word/Char-Targets ausserhalb (z.B. diag-break-h2)
+      var seen = new Set();
+      function add(el) { if (el && !seen.has(el)) { seen.add(el); } }
+      document.querySelectorAll("[data-reveal]").forEach(add);
+      // Standalone Headlines die nicht in einem data-reveal Container liegen (Hero ist separat).
+      document.querySelectorAll(".diag-break h2, .big-cta h2").forEach(function (h) {
+        if (!h.closest("[data-reveal]")) add(h);
+      });
+      // Standalone Eyebrows ausserhalb von data-reveal
+      document.querySelectorAll(".diag-break-eyebrow").forEach(function (eb) {
+        if (!eb.closest("[data-reveal]")) add(eb);
+      });
+      // Proof-Counter (about-us-proof-num) liegt in einem data-reveal Container — okay, wird mit-getriggert.
+
+      var els = Array.from(seen);
+      if (!els.length) return;
+      if (!("IntersectionObserver" in window)) {
+        els.forEach(trigger);
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            trigger(e.target);
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.05, rootMargin: "0px 0px 12% 0px" });
+      els.forEach(function (el) { io.observe(el); });
+    });
+
+    // === CARD HEIGHT EQUALIZER (cross-row gleichhohe Cards + Children-Baselines) ===
+    document.addEventListener("DOMContentLoaded", function () {
+      function equalize(els) {
+        if (!els.length) return;
+        els.forEach(function (e) { e.style.minHeight = ""; });
+        var max = els.reduce(function (m, e) { return Math.max(m, e.offsetHeight); }, 0);
+        els.forEach(function (e) { e.style.minHeight = max + "px"; });
+      }
+      function equalizeCards(sel) {
+        equalize(Array.from(document.querySelectorAll(sel)));
+      }
+      function equalizeChildren(parentSel, childSel) {
+        var parents = Array.from(document.querySelectorAll(parentSel));
+        var kids = parents.map(function (p) { return p.querySelector(childSel); }).filter(Boolean);
+        equalize(kids);
+      }
+      function runAll() {
+        /* v26: Erst Children equalizen (damit Headlines auf einer Linie sind),
+           danach die Card-Container — sonst überschreibt der Card-Equalizer eine
+           inkonsistente Body-Höhe. */
+        equalizeChildren(".about-us-card", "h3");
+        equalizeChildren(".team-card", ".team-card-name");
+        equalizeChildren(".team-card", ".team-card-role");
+        equalizeCards(".about-us-card");
+        equalizeCards(".team-card");
+      }
+      runAll();
+      /* Fonts erst nach Webfont-Load final messen — sonst falsche Höhen. */
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(runAll);
+      }
+      var eqTimer;
+      window.addEventListener("resize", function () {
+        clearTimeout(eqTimer);
+        eqTimer = setTimeout(runAll, 150);
+      });
+    });
+  </script>
+</body>
+
+</html>

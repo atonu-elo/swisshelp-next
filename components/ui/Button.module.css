@@ -1,0 +1,148 @@
+@import '@/styles/design-tokens.css';
+
+.btn {
+  --swh-btn-steps: 7;
+  --swh-btn-duration: 0.62s;
+  --swh-btn-half: calc(var(--swh-btn-duration) / var(--swh-btn-steps) / 2);
+  --swh-btn-radius: var(--swh-radius, 2px);
+  --swh-btn-font-family: var(--swh-btn-font, var(--swh-font-mono));
+  --swh-btn-font-size: var(--swh-btn-size, 13px);
+  --swh-btn-font-weight: var(--swh-btn-weight, 600);
+  --swh-btn-letter-spacing: var(--swh-btn-spacing, 0.08em);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--swh-btn-font-family), ui-monospace, monospace;
+  font-weight: var(--swh-btn-font-weight);
+  letter-spacing: var(--swh-btn-letter-spacing);
+  text-transform: uppercase;
+  line-height: 1.1;
+  text-decoration: none;
+  border-radius: var(--swh-btn-radius);
+  border: none;
+  cursor: pointer;
+  transition: color var(--swh-btn-duration) ease, background-color var(--swh-btn-duration) ease, border-color var(--swh-btn-duration) ease;
+  overflow: hidden;
+  isolation: isolate;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+/* Size classes */
+.sm {
+  padding: 10px 18px;
+  font-size: 12px;
+}
+
+.md {
+  padding: 14px 24px;
+  font-size: var(--swh-btn-font-size);
+}
+
+.lg {
+  padding: 16px 28px;
+  font-size: 14px;
+}
+
+/* Sweep effect elements */
+.btn::before,
+.btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: calc(50% + 1px);
+  transform: translateX(-101%);
+  transition: transform var(--swh-btn-duration) steps(var(--swh-btn-steps));
+  z-index: -1;
+  pointer-events: none;
+}
+
+.btn::before {
+  top: 0;
+}
+
+.btn::after {
+  bottom: 0;
+  transition-delay: var(--swh-btn-half);
+}
+
+.btn:hover::before,
+.btn:hover::after {
+  transform: translateX(0);
+}
+
+/* Primary Variant (solid red fill, sweeps with black/dark ink) */
+.primary {
+  background: var(--swh-accent);
+  color: var(--swh-white);
+  border: 1.5px solid var(--swh-accent);
+}
+
+.primary::before,
+.primary::after {
+  background: var(--swh-ink);
+}
+
+.primary:hover {
+  color: var(--swh-white);
+}
+
+/* Outline Variant (border, sweeps with red fill, white text) */
+.outline {
+  background: transparent;
+  color: var(--swh-ink);
+  border: 1px solid var(--swh-ink);
+}
+
+.outline::before,
+.outline::after {
+  background: var(--swh-accent);
+}
+
+.outline:hover {
+  color: var(--swh-white);
+  border-color: var(--swh-accent);
+}
+
+/* Homepage-style light outline button on dark background */
+.outlineLight {
+  background: transparent;
+  color: var(--swh-white);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.outlineLight::before,
+.outlineLight::after {
+  background: var(--swh-accent);
+}
+
+.outlineLight:hover {
+  color: var(--swh-white);
+  border-color: var(--swh-accent);
+}
+
+/* Ghost Variant (transparent, sweeps with light grey/subtle bg) */
+.ghost {
+  background: transparent;
+  color: var(--swh-ink);
+}
+
+.ghost::before,
+.ghost::after {
+  background: rgba(14, 14, 16, 0.06);
+}
+
+.ghost:hover {
+  color: var(--swh-ink);
+}
+
+/* Disabled state */
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}

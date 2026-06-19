@@ -1,0 +1,506 @@
+/*
+  SiteHeader.module.css
+  ─────────────────────────────────────────────────────────────────────────────
+  Scoped styles for SiteHeader. All class names are hashed at build time
+  → zero risk of contaminating homepage or other global styles.
+
+  Design tokens are declared inline to avoid depending on any global :root.
+  They mirror the homepage CI exactly.
+*/
+
+/* ── Variables (local, not global) ─────────────────────────────────────────── */
+.header {
+  --accent: #E11D2A;
+  --ink: #0E0E10;
+  --bg: #0E0E10;
+  --text: rgba(255, 255, 255, 0.88);
+  --text-soft: rgba(255, 255, 255, 0.55);
+  --border: rgba(255, 255, 255, 0.08);
+  --font-disp: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --nav-h: 68px;
+  --wide: 1440px;
+  --pad: clamp(20px, 4vw, 56px);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-h);
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  z-index: 9000;
+}
+
+/* ── Inner flex row ─────────────────────────────────────────────────────────── */
+.inner {
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  position: relative;
+}
+
+/* ── Logo ───────────────────────────────────────────────────────────────────── */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+  text-decoration: none;
+  margin-right: 40px;
+  flex-shrink: 0;
+}
+
+.logo:hover img {
+  transform: scale(1.1);
+}
+
+.logo img {
+  height: 52.8px;
+  width: auto;
+  display: block;
+  border-radius: 2px;
+  transition: transform 0.15s ease;
+}
+
+/* ── Desktop nav ────────────────────────────────────────────────────────────── */
+.desktopNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex: 1;
+  height: 100%;
+}
+
+@media (min-width: 901px) {
+  .desktopNav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    flex: none;
+  }
+}
+
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 14px;
+  height: 100%;
+  font-family: var(--font-disp);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+  border-radius: 2px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.18s, background 0.18s;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.navLink:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.navLinkActive {
+  color: #fff;
+}
+
+/* ── Dropdown trigger ───────────────────────────────────────────────────────── */
+.dropdownTrigger {
+  position: relative;
+}
+
+.chevron {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+/* Dropdown wrapper */
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+}
+
+/* Dropdown panel */
+.dropdownPanel {
+  position: absolute;
+  top: 100%;
+  /* Align exactly with bottom of header or calc(100% + 10px) but with bridge */
+  top: calc(100% + 10px);
+  left: -12px;
+  width: 320px;
+  background: #1C1C20;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 4px;
+  padding: 8px 0;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55);
+  z-index: 9100;
+  animation: dropIn 0.15s ease;
+}
+
+.dropdownPanel::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  /* Cover the 10px gap plus triggers */
+  left: 0;
+  right: 0;
+  height: 15px;
+  background: transparent;
+}
+
+@keyframes dropIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdownAll {
+  display: block;
+  padding: 10px 16px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.dropdownAll:hover {
+  background: rgba(225, 29, 42, 0.08);
+}
+
+.dropdownDivider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 4px 0;
+}
+
+.dropdownGrid {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdownItem {
+  display: block;
+  padding: 9px 16px;
+  font-family: var(--font-disp);
+  font-size: 13.5px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.78);
+  text-decoration: none;
+  transition: color 0.15s, background 0.15s;
+  border-left: 2px solid transparent;
+}
+
+.dropdownItem:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  border-left-color: var(--accent);
+}
+
+.dropdownItemActive {
+  color: #fff;
+  border-left-color: var(--accent);
+  background: rgba(225, 29, 42, 0.06);
+}
+
+/* ── Phone CTA ─────────────────────────────────────────────────────────────── */
+.phoneCta {
+  --swh-btn-steps: 7;
+  --swh-btn-duration: 0.62s;
+  --swh-btn-half: calc(var(--swh-btn-duration) / var(--swh-btn-steps) / 2);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 20px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.1;
+  border-radius: 2px;
+  text-decoration: none;
+  margin-left: auto;
+  flex-shrink: 0;
+  transition: color 0.22s;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border: 0 solid var(--accent);
+  box-sizing: border-box;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.phoneCta::before,
+.phoneCta::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: calc(50% + 1.5px);
+  transform: translateX(-101%);
+  transition: transform var(--swh-btn-duration) steps(var(--swh-btn-steps));
+  z-index: -1;
+  pointer-events: none;
+  background: #fff;
+}
+
+.phoneCta::before {
+  top: 0;
+}
+
+.phoneCta::after {
+  bottom: 0;
+  transition-delay: var(--swh-btn-half);
+}
+
+.phoneCta:hover::before,
+.phoneCta:hover::after {
+  transform: translateX(0);
+}
+
+.phoneCta:hover {
+  color: var(--accent);
+}
+
+.phoneCta svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* Hide phone number text on narrow screens — keep icon */
+@media (max-width: 1100px) {
+  .phoneNum {
+    display: none;
+  }
+
+  .phoneCta {
+    padding: 10px 12px;
+    min-height: 44px;
+    min-width: 44px;
+    justify-content: center;
+  }
+}
+
+/* ── Hamburger button ───────────────────────────────────────────────────────── */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 2px;
+  cursor: pointer;
+  margin-left: 12px;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.burger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #fff;
+  border-radius: 1px;
+  transition: transform 0.25s, opacity 0.25s;
+}
+
+.burgerOpen span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.burgerOpen span:nth-child(2) {
+  opacity: 0;
+}
+
+.burgerOpen span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Mobile drawer ──────────────────────────────────────────────────────────── */
+.drawer {
+  position: fixed;
+  top: 68px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #0E0E10;
+  z-index: 8999;
+  transform: translateX(100%);
+  transition: transform 0.32s cubic-bezier(0.65, 0.05, 0.2, 1);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.drawerOpen {
+  transform: translateX(0);
+}
+
+.drawerInner {
+  padding: 28px clamp(20px, 6vw, 40px) 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.drawerNav {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+}
+
+.drawerLink {
+  display: block;
+  padding: 14px 0;
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: color 0.18s;
+}
+
+.drawerLink:last-child {
+  border-bottom: none;
+}
+
+.drawerLink:hover {
+  color: #fff;
+}
+
+.drawerServices {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 32px;
+}
+
+.drawerServicesLabel {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0 0 10px;
+}
+
+.drawerServiceLink {
+  display: block;
+  padding: 10px 0;
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.62);
+  text-decoration: none;
+  transition: color 0.15s;
+  border-left: 2px solid transparent;
+  padding-left: 12px;
+  min-height: 44px;
+}
+
+.drawerServiceLink:hover {
+  color: #fff;
+  border-left-color: #E11D2A;
+}
+
+.drawerCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #E11D2A;
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: 2px;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.1;
+  text-decoration: none;
+  transition: opacity 0.18s;
+  min-height: 44px;
+}
+
+.drawerCta:hover {
+  opacity: 0.88;
+}
+
+.drawerCta svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* Backdrop */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  top: 68px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 8998;
+  backdrop-filter: blur(2px);
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .desktopNav {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+}
+
+@media (min-width: 901px) {
+  .drawer {
+    display: none;
+  }
+
+  .backdrop {
+    display: none;
+  }
+}

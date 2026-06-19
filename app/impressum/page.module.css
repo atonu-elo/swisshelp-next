@@ -1,0 +1,156 @@
+/* Shared base styles for new pages — copy this for ueber-uns, kontakt, impressum, datenschutz */
+.main {
+  padding-top: 80px;
+  min-height: 100vh;
+  background: #F4F2EE;
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+}
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 56px);
+  padding-bottom: 80px;
+}
+.header {
+  padding: 80px 0 60px;
+  max-width: 640px;
+}
+.eyebrow {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #E11D2A;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 2px;
+  background: #E11D2A;
+  display: inline-block;
+}
+.h1 {
+  font-family: 'Darker Grotesque', system-ui, sans-serif;
+  font-size: clamp(27px, 3.2vw, 45px);
+  font-weight: 900;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  color: #0E0E10;
+  margin-bottom: 20px;
+  margin-top: 48px;
+}
+.h2 {
+  font-family: 'Darker Grotesque', system-ui, sans-serif;
+  font-size: clamp(22px, 2.4vw, 32px);
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  color: #0E0E10;
+  margin-bottom: 12px;
+  margin-top: 36px;
+}
+.lead {
+  font-size: 18px;
+  color: #555555;
+  line-height: 1.55;
+  margin-bottom: 40px;
+}
+.content {
+  max-width: 720px;
+  padding-top: 20px;
+}
+.content p {
+  font-size: 16px;
+  color: #555555;
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+.content h2 {
+  font-family: 'Darker Grotesque', system-ui, sans-serif;
+  font-size: clamp(20px, 1.8vw, 26px);
+  font-weight: 800;
+  color: #0E0E10;
+  margin-top: 36px;
+  margin-bottom: 12px;
+}
+.content address {
+  font-style: normal;
+  font-size: 16px;
+  color: #555555;
+  line-height: 1.65;
+}
+.content a {
+  color: #E11D2A;
+  text-decoration: none;
+}
+.content a:hover {
+  text-decoration: underline;
+}
+/* Kontakt specific */
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  padding-top: 40px;
+}
+@media (max-width: 768px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.address {
+  font-style: normal;
+  font-size: 16px;
+  color: #555555;
+  line-height: 1.8;
+}
+.address a {
+  color: #E11D2A;
+  text-decoration: none;
+}
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.formNote {
+  font-size: 16px;
+  color: #555555;
+  line-height: 1.55;
+}
+.formNote a {
+  color: #E11D2A;
+}
+.phoneCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #E11D2A;
+  color: #ffffff;
+  padding: 18px 28px;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 2px;
+  text-decoration: none;
+  align-self: flex-start;
+  transition: opacity 0.2s;
+}
+.phoneCta:hover {
+  opacity: 0.9;
+}
+.phoneCta svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
